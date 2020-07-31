@@ -1,0 +1,18 @@
+-BEGIN HEADER-
+NASA/POWER SRB/FLASHFlux/MERRA2/ 0.5 x 0.5 Degree Climatologies 
+22-year Additional Solar Parameter Monthly & Annual Climatologies (July 1983 - June 2005), 30-year Meteorological and Solar Monthly & Annual Climatologies (January 1984 - December 2013) 
+Location: Latitude  10.411   Longitude -66.881 
+Elevation from MERRA-2: Average for 1/2x1/2 degree lat/lon region = 508.84 meters   Site = na 
+Climate zone: na (reference Briggs et al: http://www.energycodes.gov) 
+Value for missing model data cannot be computed or out of model availability range: -999 
+Parameter(s): 
+ALLSKY_SFC_SW_DWN SRB/FLASHFlux 1/2x1/2 All Sky Insolation Incident on a Horizontal Surface (kW-hr/m^2/day) 
+SG_DAY_HOUR_AVG SRB/FLASHFlux 1/2x1/2 Daylight Hours (hours) 
+MIDDAY_INSOL SRB/FLASHFlux 1/2x1/2 Midday Insolation Incident On A Horizontal Surface (W m-2) 
+CLRSKY_SFC_SW_DWN SRB/FLASHFlux 1/2x1/2 Clear Sky Insolation Incident on a Horizontal Surface (kW-hr/m^2/day) 
+-END HEADER-
+LAT,LON,PARAMETER,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC,ANN
+10.41101,-66.88099,MIDDAY_INSOL,            646.22,            684.80,            704.09,            694.44,            646.22,            636.57,            655.86,            675.15,            704.09,            675.15,            646.22,            617.28,-999
+10.41101,-66.88099,CLRSKY_SFC_SW_DWN,              6.24,              6.82,              7.30,              7.33,              7.14,              7.02,              7.12,              7.21,              7.16,              6.64,              6.12,              5.83,              6.83
+10.41101,-66.88099,ALLSKY_SFC_SW_DWN,              5.39,              5.75,              6.18,              5.83,              5.51,              5.48,              5.78,              5.89,              5.80,              5.38,              5.03,              4.97,              5.58
+10.41101,-66.88099,SG_DAY_HOUR_AVG,   11.60,   11.80,   12.07,   12.35,   12.60,   12.72,   12.67,   12.45,   12.18,   11.90,   11.65,   11.53,-999

@@ -1,0 +1,232 @@
+CCS PCM C Compiler, Version 5.095d, 1               11-Aug-20 18:05
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+               Filename:   C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\Pic Code\CodigoPic16f887.lst
+
+               ROM used:   133 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   16 (4%) at main() level
+                           16 (4%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... //Vladimir Alfaro - Universidad Simón Bolívar - 09/08/2020 
+.................... // Con este código se pretende diseñar el algoritmo de control MMPT para un microcontrolador PIC16F887
+.................... //-----------------------------------------------------------------------------------------------------
+.................... 
+.................... #include <16f887.h>
+.................... //////////// Standard Header file for the PIC16F887 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F887
+.................... 
+.................... #list
+.................... 
+.................... #device ADC = 10     // Conversor Analógico Digital con  10 bits de resolución
+.................... #fuses XT, NOWDT, NOPROTECT, NOLVP, PUT, BROWNOUT, INTRC_IO
+.................... #use delay(clock=4000000)
+.................... 
+.................... int16 duty = 0;
+.................... int Timer2, PostCaler;// Preescaler;
+.................... int V1, V2=140, I1=10, I2, P1, P2;
+.................... 
+.................... void main(){
+0004:  MOVF   03,W
+0005:  ANDLW  1F
+0006:  MOVWF  03
+0007:  MOVLW  61
+0008:  BSF    03.5
+0009:  MOVWF  0F
+000A:  CLRF   10
+000B:  MOVF   0F,W
+000C:  BCF    03.5
+000D:  CLRF   21
+000E:  CLRF   20
+000F:  MOVLW  8C
+0010:  MOVWF  25
+0011:  MOVLW  0A
+0012:  MOVWF  26
+0013:  MOVLW  FF
+0014:  MOVWF  2A
+0015:  BSF    03.5
+0016:  BSF    03.6
+0017:  MOVF   09,W
+0018:  ANDLW  C0
+0019:  MOVWF  09
+001A:  BCF    03.6
+001B:  BCF    1F.4
+001C:  BCF    1F.5
+001D:  MOVLW  00
+001E:  BSF    03.6
+001F:  MOVWF  08
+0020:  BCF    03.5
+0021:  CLRF   07
+0022:  CLRF   08
+0023:  CLRF   09
+0024:  BCF    03.7
+....................     
+....................     //Para la PWM de 1Khz es necesario un Timer2=249, cuando la frecuencia del cristal es de 4Mhz,
+....................     //el PostCaler=1 y Preescaler=4, en base a la siguiente fórmula:
+....................     // Timer2 = (Td*fxtal/(4*Preescaler-PostCaler)) - 1
+....................     Timer2 = 24;                                     //Para este valor del Timer se puede alcanzar una f=10KHz
+0025:  MOVLW  18
+0026:  BCF    03.6
+0027:  MOVWF  22
+....................     PostCaler = 1;                                  // Sólo puede tomar valores de 1, 4 o 16, igual que el preescaler
+0028:  MOVLW  01
+0029:  MOVWF  23
+....................     //Preescaler = 4;
+....................     
+....................     setup_timer_2(t2_div_by_4, Timer2, PostCaler);   // Configuración del timer 2 
+002A:  SUBWF  23,W
+002B:  MOVWF  78
+002C:  RLF    78,W
+002D:  MOVWF  77
+002E:  RLF    77,F
+002F:  RLF    77,F
+0030:  MOVLW  F8
+0031:  ANDWF  77,F
+0032:  MOVF   77,W
+0033:  IORLW  05
+0034:  MOVWF  12
+0035:  MOVF   22,W
+0036:  BSF    03.5
+0037:  MOVWF  12
+....................     setup_ccp1(ccp_pwm);                            // Con esto estamos configurando el modo PWM en la salida ccp1
+0038:  BCF    03.5
+0039:  BCF    2A.2
+003A:  MOVF   2A,W
+003B:  BSF    03.5
+003C:  MOVWF  07
+003D:  BCF    03.5
+003E:  BCF    07.2
+003F:  MOVLW  0C
+0040:  MOVWF  17
+0041:  BSF    03.5
+0042:  CLRF   1B
+0043:  CLRF   1C
+0044:  MOVLW  01
+0045:  MOVWF  1D
+....................     setup_adc_ports(all_analog);                    // Todos los puertos analÃ³gicos quedarÃ¡n como analÃ³gicos
+0046:  BSF    03.6
+0047:  MOVF   09,W
+0048:  ANDLW  C0
+0049:  IORLW  1F
+004A:  MOVWF  09
+004B:  BCF    03.6
+004C:  BCF    1F.4
+004D:  BCF    1F.5
+004E:  MOVLW  FF
+004F:  BSF    03.6
+0050:  MOVWF  08
+....................     setup_adc(adc_clock_internal);                  //Configuramos la velocidad del ADC
+0051:  BCF    03.5
+0052:  BCF    03.6
+0053:  BSF    1F.6
+0054:  BSF    1F.7
+0055:  BSF    03.5
+0056:  BSF    1F.7
+0057:  BCF    03.5
+0058:  BSF    1F.0
+....................     while(1){
+....................         set_adc_channel(0);                         //Configuro RA0 como un canal analógico de entrada que leerá constantemente
+0059:  MOVLW  00
+005A:  MOVWF  78
+005B:  MOVF   1F,W
+005C:  ANDLW  C3
+005D:  IORWF  78,W
+005E:  MOVWF  1F
+....................         delay_us(100);
+005F:  MOVLW  21
+0060:  MOVWF  77
+0061:  DECFSZ 77,F
+0062:  GOTO   061
+....................         duty = read_adc();                          //Se guarda el valor leído en Duty (va de 0 a 1024)
+0063:  BSF    1F.1
+0064:  BTFSC  1F.1
+0065:  GOTO   064
+0066:  MOVF   1E,W
+0067:  MOVWF  79
+0068:  BSF    03.5
+0069:  MOVF   1E,W
+006A:  MOVWF  78
+006B:  MOVF   79,W
+006C:  BCF    03.5
+006D:  MOVWF  21
+006E:  MOVF   78,W
+006F:  MOVWF  20
+....................         set_pwm1_duty(duty);                         //Se confiugura el dutycycle de la PWM 
+0070:  MOVF   21,W
+0071:  MOVWF  79
+0072:  MOVF   20,W
+0073:  MOVWF  78
+0074:  RRF    79,F
+0075:  RRF    78,F
+0076:  RRF    79,F
+0077:  RRF    78,F
+0078:  RRF    79,F
+0079:  MOVF   78,W
+007A:  MOVWF  15
+007B:  RRF    79,F
+007C:  RRF    79,W
+007D:  ANDLW  30
+007E:  MOVWF  77
+007F:  MOVF   17,W
+0080:  ANDLW  CF
+0081:  IORWF  77,W
+0082:  MOVWF  17
+0083:  GOTO   059
+....................     }
+....................     //*-------------------------Algoritmo MPPT P&O-------------------------*//
+....................     /*
+....................     set_adc_channel(1);
+....................     delay_us(100);
+....................     V1 = read_adc();
+....................     
+....................     set_adc_channel(2);
+....................     delay_us(100);
+....................     I1 = read_adc();
+....................     
+....................     P1 = V1*I1;
+....................     P2 = V2*I2;
+....................     
+....................     if(P1 == P2){
+....................       return;
+....................     }
+....................     else{
+....................       if(P1 - P2 > 0){
+....................          if(V1 - V2 > 0){
+....................             //No estoy seguro de que poner aqui
+....................          }
+....................          else{
+....................             //No estoy seguro de que poner aqui
+....................          }
+....................       }
+....................       else{
+....................          if(V1 - V2 > 0){
+....................             //*No estoy seguro de que poner aqui
+....................          }
+....................          else{
+....................             //No estoy seguro de que poner aqui
+....................          }
+....................       }
+....................     }
+.................... */    
+.................... }
+0084:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2FE4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

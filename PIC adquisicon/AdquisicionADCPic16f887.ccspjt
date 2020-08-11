@@ -1,0 +1,17 @@
+[PROJECT]
+Target=AdquisicionADCPic16f887.hex
+Processor_Text=PIC16F887
+CCSVersion=5.095d
+Compiler=PCM
+[Target Data]
+FileList=AdquisicionADCPic16f887.c
+[AdquisicionADCPic16f887.c]
+Type=4
+[mru-list]
+1=AdquisicionADCPic16f887.c
+[Units]
+Count=1
+1=AdquisicionADCPic16f887 (main)
+
+[defines]
+buildcount=1

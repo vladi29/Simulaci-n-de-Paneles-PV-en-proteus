@@ -1,0 +1,140 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+005     PORTA
+008     lcdlat
+008     PORTD
+008     lcd
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-021 bits
+022-025 tem
+026-027 @sprintf_string
+028     lcd_init.i
+028-02B @PRINTF_L32D_703FPFPF.P1
+028     @PSTRINGCN7_703.P2
+028-029 @ITOF.P3
+028     MAIN.@SCRATCH1
+028     @PSTRINGC7_703.@SCRATCH1
+029-02C lcd_init.LCD_INIT_STRING
+029     @PSTRINGC7_703.@SCRATCH2
+029     @PSTRINGCN7_703.@SCRATCH1
+02A     @PSTRINGC7_703.@SCRATCH3
+02A     @PSTRINGCN7_703.@SCRATCH2
+02B     @PSTRINGC7_703.@SCRATCH4
+02B     @PSTRINGCN7_703.@SCRATCH3
+02C     @PRINTF_L32D_703FPFPF.P1
+02C     @PSTRINGCN7_703.@SCRATCH4
+02D     lcd_init.@SCRATCH1
+02D     @PRINTF_L32D_703FPFPF.@SCRATCH1
+02E     @PRINTF_L32D_703FPFPF.@SCRATCH2
+02F     @PRINTF_L32D_703FPFPF.@SCRATCH3
+030     @PRINTF_L32D_703FPFPF.@SCRATCH4
+031     @PRINTF_L32D_703FPFPF.@SCRATCH5
+032     @PRINTF_L32D_703FPFPF.@SCRATCH6
+033     @PRINTF_L32D_703FPFPF.@SCRATCH7
+034     @PRINTF_L32D_703FPFPF.@SCRATCH8
+035     lcd_putc.c
+035-038 @MULFF.P1
+035-038 @DIV3232.P2
+035-038 @FTOSD.P3
+036     lcd_gotoxy.x
+036     @delay_ms1.P1
+037     lcd_gotoxy.y
+038     lcd_gotoxy.address
+039-03C @MULFF.P1
+039-03C @DIV3232.P2
+039     lcd_gotoxy.@SCRATCH1
+039     @FTOSD.@SCRATCH1
+03A     lcd_send_byte.address
+03B     lcd_send_byte.n
+03C     lcd_read_byte.low
+03C     lcd_send_byte.@SCRATCH1
+03D     lcd_send_nibble.n
+03D     lcd_read_byte.high
+03D     @MULFF.@SCRATCH1
+03D     @DIV3232.@SCRATCH1
+03E     lcd_read_byte.@SCRATCH1
+03E     @MULFF.@SCRATCH2
+03E     @DIV3232.@SCRATCH2
+03F     @MULFF.@SCRATCH3
+03F     @DIV3232.@SCRATCH3
+040     @MULFF.@SCRATCH4
+040     @DIV3232.@SCRATCH4
+041     @MULFF.@SCRATCH5
+041     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const722.call
+000005  @const732.call
+00000D  @const733.call
+000014  @delay_ms1
+000029  lcd_send_nibble
+000035  lcd_read_nibble
+00003B  lcd_send_byte
+000041  lcd_read_byte
+00007B  lcd_init
+0000B9  lcd_gotoxy
+0000CB  lcd_putc
+0000F7  @PSTRINGC7_703
+00014D  @ITOF
+00016C  @MULFF
+0001E1  @PSTRINGCN7_703
+000238  @DIV3232
+000287  @PRINTF_L32D_703FPFPF
+0002AE  @FTOSD
+000369  MAIN
+000369  @cinit1
+00037D  @cinit2
+
+Project Directory:
+    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC adquisicon\
+
+Project Files:
+    AdquisicionADCPic16f887.c                               [11-Aug-20 18:53  CRC=9F121D93]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-Feb-16 10:05  CRC=D1A6378A]
+
+Source signature=F0E53798
+Program memory checksum=0000
+Hex file CRC=1ADE
+
+Units:
+    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC adquisicon\AdquisicionADCPic16f887 (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   AdquisicionADCPic16f887.xsym
+    Errors:      AdquisicionADCPic16f887.err
+    Ext Symbols: AdquisicionADCPic16f887.esym
+    INHX8:       AdquisicionADCPic16f887.hex
+    Symbols:     AdquisicionADCPic16f887.sym
+    List:        AdquisicionADCPic16f887.lst
+    Debug/COFF:  AdquisicionADCPic16f887.cof
+    Project:     AdquisicionADCPic16f887.ccspjt
+    Call Tree:   AdquisicionADCPic16f887.tre
+    Statistics:  AdquisicionADCPic16f887.STA

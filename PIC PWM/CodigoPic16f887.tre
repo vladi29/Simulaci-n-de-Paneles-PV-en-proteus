@@ -1,5 +1,5 @@
 ÀÄCodigoPic16f887
-   ÀÄMAIN  0/487  Ram=4
+   ÀÄMAIN  0/485  Ram=4
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@cinit2  (Inline)  Ram=0
       ÃÄlcd_init  0/62  Ram=6

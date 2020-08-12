@@ -1,4 +1,4 @@
-Compiling C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887 on 12-Aug-20 at 19:28
+Compiling C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887 on 12-Aug-20 at 19:29
 >>> Warning 244 "C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887.c" Line 33(19,23): Function Param:   :: 8-bit value passed to function, only 8 MSB of duty will be set
 >>> Warning 203 "C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887.c" Line 35(1,1): Condition always TRUE
       Memory usage:   ROM=19%      RAM=11% - 14%

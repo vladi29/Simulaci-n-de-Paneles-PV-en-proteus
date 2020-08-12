@@ -1,6 +1,6 @@
 
-ROM used:   1548/8192 (19%)
-            1548/8192 (19%) including unused fragments
+ROM used:   1546/8192 (19%)
+            1546/8192 (19%) including unused fragments
 
             1.2 Average locations per line
             11.9 Average locations per statement
@@ -29,7 +29,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0     62   4    6    814  7.2  lcd_init
 0     18   1    4    208  6.3  lcd_gotoxy
 0     44   3    1    354  4.7  lcd_putc
-0    487  31    4   1304  6.7  MAIN
+0    485  31    4   1320  6.2  MAIN
 0      1   0    0             @const730
 0     86   6    4             @PSTRINGC7_703
 0     29   2    2             @ITOF
@@ -48,10 +48,10 @@ Program metrics:
     Functions               9
     Statements              130
     Comments                272
-    Volume (V)              7830
-    Difficulty (D)          46.3
-    Effort to implement (E) 362860
-    Time to implement (T)   5 hours, 36 minutes
+    Volume (V)              7850
+    Difficulty (D)          45.8
+    Effort to implement (E) 359840
+    Time to implement (T)   5 hours, 33 minutes
     Est Delivered Bugs (B)  2
     Cyclomatic Complexity   16
     Maintainability (MI)    132
@@ -59,7 +59,7 @@ Program metrics:
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF  1544  500  
+00004-007FF  1542  502  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

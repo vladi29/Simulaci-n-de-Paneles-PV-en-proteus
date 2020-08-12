@@ -121,13 +121,13 @@ Project Directory:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\
 
 Project Files:
-    CodigoPic16f887.c                                       [12-Aug-20 19:28  CRC=9105F685]
+    CodigoPic16f887.c                                       [12-Aug-20 19:29  CRC=2DE6B527]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-Feb-16 10:05  CRC=D1A6378A]
 
-Source signature=E2D9108A
+Source signature=7FB9CF2C
 Program memory checksum=0000
-Hex file CRC=3506
+Hex file CRC=2C45
 
 Units:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887 (main)

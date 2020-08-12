@@ -50,7 +50,7 @@ void main(){
        P2 = V2*I2;
        
        if(P1 == P2){
-         duty = duty;
+         return;
        }
        else{
          if(P1 - P2 > 0){

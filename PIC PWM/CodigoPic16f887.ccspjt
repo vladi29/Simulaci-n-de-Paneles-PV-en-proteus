@@ -11,11 +11,11 @@ Type=4
 1=CodigoPic16f887.c
 
 [defines]
-buildcount=34
+buildcount=36
 
 [Opened Files]
 1=CodigoPic16f887.c
-t1=1
+t1=61
 Count=1
 2=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
 t2=92

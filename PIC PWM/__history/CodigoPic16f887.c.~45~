@@ -30,11 +30,11 @@ void main(){
     setup_adc(adc_clock_internal);                    //Configuramos la velocidad del ADC
     lcd_init();
     lcd_putc("\f");
-    
+    set_pwm1_duty(duty);         //Se confiugura el dutycycle de la PWM
     
     while(1){
     
-       set_pwm1_duty(100);         //Se confiugura el dutycycle de la PWM
+       
        
        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
        delay_us(50);                //Retardo de 50 us para leer la data

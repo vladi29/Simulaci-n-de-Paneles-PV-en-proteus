@@ -1,4 +1,4 @@
-CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 19:31
+CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 19:42
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
@@ -1561,9 +1561,9 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 .................... #byte PORTA = 5
 .................... #byte PORTD = 8
 .................... 
-.................... int Timer2=9, PostCaler=1, duty = 10; // Preescaler;
-.................... //Para 25KHz, el valor para modular el DutyCycle será 40 = 100%
-.................... //Por lo tanto duty = 20 implica un DutyCycle de 50%
+.................... int Timer2=49, PostCaler=1, duty = 100; // Preescaler;
+.................... //Para 5KHz, el valor para modular el DutyCycle será 200 = 100%
+.................... //Por lo tanto duty = 100 implica un DutyCycle de 50%
 .................... float V1, V2=0, I1, I2=0, P1, P2;
 .................... 
 .................... void main(){
@@ -1576,12 +1576,12 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 042A:  MOVWF  0F
 042B:  CLRF   10
 042C:  MOVF   0F,W
-042D:  MOVLW  09
+042D:  MOVLW  31
 042E:  BCF    03.5
 042F:  MOVWF  20
 0430:  MOVLW  01
 0431:  MOVWF  21
-0432:  MOVLW  0A
+0432:  MOVLW  64
 0433:  MOVWF  22
 0434:  CLRF   2A
 0435:  CLRF   29
@@ -1686,11 +1686,11 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 048A:  MOVWF  0F
 048B:  BCF    03.6
 048C:  CALL   0F6
-....................     set_pwm1_duty(duty);         //Se confiugura el dutycycle de la PWM
+....................     
 ....................     
 ....................     while(1){
 ....................     
-....................        
+....................        set_pwm1_duty(100);         //Se confiugura el dutycycle de la PWM
 ....................        
 ....................        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
 048D:  MOVLW  00

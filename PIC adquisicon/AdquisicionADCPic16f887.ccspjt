@@ -16,7 +16,7 @@ buildcount=10
 [ProjectLog]
 Days=1
 D1=11-08-2020
-D1_L=17
+D1_L=19
 D1_L1=[69777]Started Editing.
 D1_L2=[71207]Stopped Editing.
 D1_L3=[77000]Started Editing.
@@ -38,6 +38,8 @@ TotalDebug=0
 D1_E=24
 D1_D=0
 D1_L17=[82152]Project Closed.
+D1_L18=[86100]Project Opened.
+D1_L19=[86112]Project Closed.
 
 [Opened Files]
 1=AdquisicionADCPic16f887.c
@@ -48,3 +50,6 @@ Count=2
 [Units]
 Count=1
 1=AdquisicionADCPic16f887 (main)
+
+[fileformats]
+forcecoff=0

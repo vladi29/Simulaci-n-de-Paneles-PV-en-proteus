@@ -1,9 +1,10 @@
-D G "__PCM__" 0 0 ""5.095d""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""11-Aug-20""
-D G "__TIME__" 0 0 ""18:05:19""
-D G "_UNICODE" 0 0 ""?""
-D G "__EVAL" 0 0 ""?"" "Vladimir Alfaro - Universidad Simón Bolívar - 09/08/2020"
+F N "main" 0 15 ""
+D G "__PCM__" 0 67 ""5.095d""
+D G "__DEVICE__" 0 67 "887"
+D G "__DATE__" 0 67 ""11-Aug-20""
+D G "__TIME__" 0 67 ""23:53:54""
+D G "_UNICODE" 0 67 ""?""
+D G "__EVAL" 0 67 ""?"" "Vladimir Alfaro - Universidad Simón Bolívar - 09/08/2020"
 c L "set_tris_a" 1 1 6 "FUNCTION"
 f N "set_tris_a" 1 39 ""
 v L "value" 1 39 "int8" `55 
@@ -461,9 +462,9 @@ f N "read_adc" 1 469 ""
 f G "read_adc" 1 469 "int16()" `206 
 f N "read_adc" 1 470 ""
 v L "mode" 1 470 "int8" `207 
-f G "read_adc" 1 470 "int16(int8 mode)" `206 
+f G "read_adc" 1 470 "int16(int8 mode,int32 pins)" `206 
 f N "adc_done" 1 471 ""
-f B "adc_done" 1 471 "int8(int8 mode)" `206  "Constants used for SETUP_ADC() are:"
+f B "adc_done" 1 471 "int8(int8 mode,int32 pins)" `206  "Constants used for SETUP_ADC() are:"
 d G "ADC_OFF" 1 473 "0" "ADC Off"
 d G "ADC_CLOCK_DIV_2" 1 474 "0x100"
 d G "ADC_CLOCK_DIV_8" 1 475 "0x40"
@@ -863,9 +864,9 @@ f B "i2c_transfer_in" 1 625 "int8(int8 stream,int8 address,*int8 rData,int8 rCou
 f N "spi_xfer" 1 628 ""
 f B "spi_xfer" 1 628 "int8()" `477 
 f N "spi_xfer" 1 629 ""
-f G "spi_xfer" 1 629 "int16()" `478 
+f G "spi_xfer" 1 629 "int16(int8 data)" `478 
 f N "spi_xfer" 1 630 ""
-f G "spi_xfer" 1 630 "int32()" `478 
+f G "spi_xfer" 1 630 "int32(int8 data)" `478 
 f N "spi_xfer" 1 631 ""
 v L "data" 1 631 "int8" `479 
 f B "spi_xfer" 1 631 "int8(int8 data)" `478 
@@ -945,18 +946,18 @@ f B "spi_prewrite" 1 650 "void(int8 ,int32 data)" `531
 f N "spi_xfer_in" 1 651 ""
 f B "spi_xfer_in" 1 651 "int8()" `534 
 f N "spi_xfer_in" 1 652 ""
-f G "spi_xfer_in" 1 652 "int16()" `535 
+f G "spi_xfer_in" 1 652 "int16(int8 bits)" `535 
 f N "spi_xfer_in" 1 653 ""
-f G "spi_xfer_in" 1 653 "int32()" `535 
+f G "spi_xfer_in" 1 653 "int32(int8 bits)" `535 
 f N "spi_xfer_in" 1 654 ""
 v L "bits" 1 654 "int8" `536 
 f B "spi_xfer_in" 1 654 "int8(int8 bits)" `535 
 f N "spi_xfer_in" 1 655 ""
 v L "bits" 1 655 "int8" `538 
-f G "spi_xfer_in" 1 655 "int16(int8 bits)" `537 
+f G "spi_xfer_in" 1 655 "int16(int8 bits,int8 bits)" `537 
 f N "spi_xfer_in" 1 656 ""
 v L "bits" 1 656 "int8" `538 
-f G "spi_xfer_in" 1 656 "int32(int8 bits)" `537 
+f G "spi_xfer_in" 1 656 "int32(int8 bits,int8 bits)" `537 
 f N "spi_xfer_in" 1 657 ""
 v L "stream" 1 657 "int8" `538 
 v L "bits" 1 657 "int8" `539 
@@ -964,11 +965,11 @@ f B "spi_xfer_in" 1 657 "int8(int8 stream,int8 bits)" `537
 f N "spi_xfer_in" 1 658 ""
 v L "stream" 1 658 "int8" `538 
 v L "bits" 1 658 "int8" `542 
-f G "spi_xfer_in" 1 658 "int16(int8 stream,int8 bits)" `540 
+f G "spi_xfer_in" 1 658 "int16(int8 stream,int8 bits,int16 count)" `540 
 f N "spi_xfer_in" 1 659 ""
 v L "stream" 1 659 "int8" `538 
 v L "bits" 1 659 "int8" `542 
-f G "spi_xfer_in" 1 659 "int32(int8 stream,int8 bits)" `540 
+f G "spi_xfer_in" 1 659 "int32(int8 stream,int8 bits,int16 count)" `540 
 f N "spi_transfer" 1 660 ""
 v L "wData" 1 660 "*int8" `541 
 v L "rData" 1 660 "*int8" `542 
@@ -1037,9 +1038,9 @@ f B "rtos_stats" 1 680 "void(int8 task,*int8 stat)" `583  "#use timer() Prototyp
 f N "get_ticks" 1 683 ""
 f B "get_ticks" 1 683 "int8()" `586 
 f N "get_ticks" 1 684 ""
-f G "get_ticks" 1 684 "int16()" `587 
+f G "get_ticks" 1 684 "int16(int8 stream)" `587 
 f N "get_ticks" 1 685 ""
-f G "get_ticks" 1 685 "int32()" `587 
+f G "get_ticks" 1 685 "int32(int8 stream)" `587 
 f N "get_ticks" 1 686 ""
 v L "stream" 1 686 "int8" `588 
 f B "get_ticks" 1 686 "int8(int8 stream)" `587 
@@ -1206,26 +1207,37 @@ d G "INT_RB4" 1 792 "0x1100B08"
 d G "INT_RB5" 1 793 "0x1200B08"
 d G "INT_RB6" 1 794 "0x1400B08"
 d G "INT_RB7" 1 795 "0x1800B08"
-V G "duty" 0 10 "int16" `677 
 V G "Timer2" 0 11 "int8" `678 
-V G "PostCaler" 0 11 "int8" `679  "Preescaler;"
-V G "V1" 0 12 "int8" `680 
-V G "V2" 0 12 "int8" `681 
-V G "I1" 0 12 "int8" `682 
-V G "I2" 0 12 "int8" `683 
-V G "P1" 0 12 "int8" `684 
-V G "P2" 0 12 "int8" `685 
-F N "main" 0 14 ""
-F G "main" 0 14 "void()" `686  "Para la PWM de 1Khz es necesario un Timer2=249, cuando la frecuencia del cristal es de 4Mhz,"
-C L "main" 0 17 2 "FUNCTION"
-C L "main" 0 17 1 "FUNCTION"
-C L "main" 0 17 2 "FUNCTION"
-C L "main" 0 17 1 "FUNCTION"
-C L "main" 0 17 1 "FUNCTION"
-C L "main" 0 17 1 "FUNCTION"
-C L "main" 0 17 1 "FUNCTION"
-C L "main" 0 17 1 "FUNCTION"
-C L "main" 0 17 1 "FUNCTION"
+V G "PostCaler" 0 11 "int8" `679 
+V G "V1" 0 11 "int8" `680 
+V G "V2" 0 11 "int8" `681 
+V G "I1" 0 11 "int8" `682 
+V G "I2" 0 11 "int8" `683 
+V G "P1" 0 11 "int8" `684 
+V G "P2" 0 11 "int8" `685 
+V G "duty" 0 11 "int8" `686 
+C L "jump_to_isr" 0 11 2 "FUNCTION"
+V G "Vm" 0 13 "float" `687 
+V G "Im" 0 13 "float" `688 
+F N "main" 0 15 ""
+F G "main" 0 15 "void()" `689  "Para la PWM de 1Khz es necesario un Timer2=249, cuando la frecuencia del cristal es de 4Mhz,"
+C L "main" 0 11 5 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 2 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 11 1 "FUNCTION"
+C L "main" 0 57 1 "*No"
+C L "main" 0 57 1 "*No"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0

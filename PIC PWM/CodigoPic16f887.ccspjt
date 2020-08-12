@@ -11,11 +11,11 @@ Type=4
 1=CodigoPic16f887.c
 
 [defines]
-buildcount=25
+buildcount=26
 
 [Opened Files]
-1=AdquisicionADCPic16f887.c
-t1=6
+1=CodigoPic16f887.c
+t1=63
 Count=1
 2=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
 t2=92
@@ -25,7 +25,7 @@ Days=2
 D1=10-08-2020
 D1_L=32
 D1_L1=[44696]Stopped Editing.
-TotalEdit=82
+TotalEdit=112
 TotalDebug=0
 D1_E=60
 D1_D=0
@@ -61,7 +61,7 @@ D1_L30=[68883]Started Editing.
 D1_L31=[70403]Stopped Editing.
 D1_L32=[70403]Project Closed.
 D2=11-08-2020
-D2_L=8
+D2_L=16
 D2_L1=[65007]Project Opened.
 D2_L2=[65024]Started Editing.
 D2_L3=[65615]Stopped Editing.
@@ -69,9 +69,17 @@ D2_L4=[66163]Started Editing.
 D2_L5=[66463]Stopped Editing.
 D2_L6=[67071]Started Editing.
 D2_L7=[68059]Stopped Editing.
-D2_E=22
+D2_E=52
 D2_D=0
 D2_L8=[68059]Project Closed.
+D2_L9=[82418]Project Opened.
+D2_L10=[83782]Started Editing.
+D2_L11=[84981]Stopped Editing.
+D2_L12=[85179]Started Editing.
+D2_L13=[86076]Stopped Editing.
+D2_L14=[86076]Project Closed.
+D2_L15=[86135]Project Opened.
+D2_L16=[86153]Project Closed.
 
 [fileformats]
 forcecoff=0

@@ -1,21 +1,27 @@
 004-005 @WRITE_PROGRAM_MEMORY8.P1
 004-005 @READ_PROGRAM_MEMORY8.P2
+005     PORTA
 015     CCP_1_LOW
 015     CCP_1
 016     CCP_1_HIGH
 01B     CCP_2_LOW
 01B     CCP_2
 01C     CCP_2_HIGH
-020-021 duty
-022     Timer2
-023     PostCaler
-024     V1
-025     V2
-026     I1
-027     I2
-028     P1
-029     P2
-02A     @TRIS_C
+020     Timer2
+021     PostCaler
+022     V1
+023     V2
+024     I1
+025     I2
+026     P1
+027     P2
+028     duty
+029-02C Vm
+02D-030 Im
+031     @TRIS_C
+032     @MUL88.P1
+032     main.@SCRATCH1
+033     @MUL88.P1
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -23,27 +29,28 @@
 07A     @SCRATCH
 107.6   C1OUT
 108.6   C2OUT
-10D-10E @READ_PROGRAM_MEMORY8.P1
-10D-10E @WRITE_PROGRAM_MEMORY8.P2
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
-000004  main
-000004  @cinit1
-000024  @cinit2
+000004  @MUL88
+000029  main
+000029  @cinit1
+00004D  @cinit2
 
 Project Directory:
-    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\Pic Code\
+    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\
 
 Project Files:
-    CodigoPic16f887.c                                       [11-Aug-20 18:05  CRC=4DD91840]
+    CodigoPic16f887.c                                       [11-Aug-20 23:53  CRC=80AC9C9F]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
 
-Source signature=AAE66E22
+Source signature=DDB9F281
 Program memory checksum=0000
-Hex file CRC=2D2A
+Hex file CRC=CEEB
 
 Units:
-    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\Pic Code\CodigoPic16f887 (main)
+    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887 (main)
 
 Compiler Settings:
     Processor:      PIC16F887

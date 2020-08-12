@@ -1,4 +1,6 @@
 青CodigoPic16f887
-   青main  0/129  Ram=0
+   青main  0/161  Ram=1
       団@cinit1  (Inline)  Ram=0
-      青@cinit2  (Inline)  Ram=0
+      団@cinit2  (Inline)  Ram=0
+      団@MUL88  0/37  Ram=2
+      青@MUL88  0/37  Ram=2

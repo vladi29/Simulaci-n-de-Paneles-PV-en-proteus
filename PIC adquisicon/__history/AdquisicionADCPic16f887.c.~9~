@@ -6,14 +6,14 @@
 #INCLUDE <LCD.C>
  
 #BYTE PORTA= 5    //Se especifica la ubicacion en memoria del puerto A
-//#BYTE PORTD= 8    //Se especifica la ubicacion en memoria del puerto D
+#BYTE PORTD= 8    //Se especifica la ubicacion en memoria del puerto D
  
 long V, I;        //Variable almacena los bits
 float Vm, Im;        //Almacena la temperatura
  
 void main(){
    set_tris_a(0b00000011);          //Configuro los pines RA0 y RA1 como entrada
-   //set_tris_d(0);                   //Pongo el PuertoD como Salida
+   set_tris_d(0);                   //Pongo el PuertoD como Salida
    setup_adc_ports(all_analog);     //Pongo todo el puerto a analogo
    setup_adc(adc_clock_internal);   //Selecciono reloj interno para conversion
    lcd_init();                      //Inicializo el LCD

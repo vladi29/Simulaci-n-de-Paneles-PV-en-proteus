@@ -30,22 +30,18 @@ void main(){
        I=read_adc();                //Guardo en bits la corriente leida por el canal 1
        
        
-       Vm = V*0.004882;                //Multiplico la cantidad de bits por la resolucion para obtener el voltaje medido
+       Vm = V*0.4882;                //Multiplico la cantidad de bits por la resolucion para obtener el voltaje medido
        lcd_gotoxy(1,1);              //Ubiquese en la posicion 1,1
        lcd_putc("Voltaje Medido");
        lcd_gotoxy(2,2);              //Ubiquese en la posicion 2,2
-       printf(lcd_putc,"Es V= %f",Vm);  //Muestra el valor numerico de la conversionconversion
-       delay_ms(500);  
+       printf(lcd_putc,"Es V= %f    ",Vm);  //Muestra el valor numerico de la conversionconversion
+       delay_ms(1000);  
        
-       lcd_putc("\f");              // Borramos LCD         
-       
-       Im = I*0.004882;                //Multiplico la cantidad de bits por la resolucion para obtener la corriente medida
+       Im = I*0.4882;                //Multiplico la cantidad de bits por la resolucion para obtener la corriente medida
        lcd_gotoxy(1,1);              //Ubiquese en la posicion 1,1
        lcd_putc("Corriente Medida");
        lcd_gotoxy(2,2);              //Ubiquese en la posicion 2,2
-       printf(lcd_putc,"Es I= %f",Im);  //Muestra el valor numerico de la conversionconversion
-       delay_ms(500);
-       
-       lcd_putc("\f");              // Borramos LCD
+       printf(lcd_putc,"Es I= %f    ",Im);  //Muestra el valor numerico de la conversionconversion
+       delay_ms(1000);
    }
 }

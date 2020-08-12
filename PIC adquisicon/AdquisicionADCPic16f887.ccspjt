@@ -9,9 +9,42 @@ FileList=AdquisicionADCPic16f887.c
 Type=4
 [mru-list]
 1=AdquisicionADCPic16f887.c
+
+[defines]
+buildcount=10
+
+[ProjectLog]
+Days=1
+D1=11-08-2020
+D1_L=17
+D1_L1=[69777]Started Editing.
+D1_L2=[71207]Stopped Editing.
+D1_L3=[77000]Started Editing.
+D1_L4=[77462]Stopped Editing.
+D1_L5=[77493]Started Editing.
+D1_L6=[77837]Stopped Editing.
+D1_L7=[78205]Started Editing.
+D1_L8=[78506]Stopped Editing.
+D1_L9=[79516]Started Editing.
+D1_L10=[79825]Stopped Editing.
+D1_L11=[80550]Started Editing.
+D1_L12=[80857]Stopped Editing.
+D1_L13=[81233]Started Editing.
+D1_L14=[81577]Stopped Editing.
+D1_L15=[81659]Started Editing.
+D1_L16=[81963]Stopped Editing.
+TotalEdit=24
+TotalDebug=0
+D1_E=24
+D1_D=0
+D1_L17=[82152]Project Closed.
+
+[Opened Files]
+1=AdquisicionADCPic16f887.c
+t1=32
+2=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
+t2=465
+Count=2
 [Units]
 Count=1
 1=AdquisicionADCPic16f887 (main)
-
-[defines]
-buildcount=1

@@ -1,5 +1,5 @@
 юдAdquisicionADCPic16f887
-   юдMAIN  0/163  Ram=1
+   юдMAIN  0/266  Ram=1
       цд@cinit1  (Inline)  Ram=0
       цд@cinit2  (Inline)  Ram=0
       цдlcd_init  0/62  Ram=6
@@ -30,8 +30,7 @@
       Ё  Ё     юд*
       Ё  юдlcd_putc  0/44  Ram=1
       Ё     юд*
-      цд@delay_ms1  0/21  Ram=1
-      цд@ITOF  0/31  Ram=2
+      цд@ITOF  0/29  Ram=2
       цд@MULFF  0/117  Ram=13
       цдlcd_gotoxy  0/18  Ram=4
       Ё  юд*
@@ -44,7 +43,7 @@
       Ё  Ё  юд*
       Ё  юдlcd_putc  0/44  Ram=1
       Ё     юд*
-      цд@PRINTF_L32D_703FPFPF  0/226  Ram=13
+      цд@PRINTF_L32D_703FPFPF  0/224  Ram=13
       Ё  цд@MULFF  0/117  Ram=13
       Ё  цд@FTOSD  (Inline)  Ram=5
       Ё  цд@DIV3232  0/79  Ram=13
@@ -57,6 +56,21 @@
       Ё  цдlcd_putc  0/44  Ram=1
       Ё  Ё  юд*
       Ё  юд@DIV3232  0/79  Ram=13
+      цд@delay_ms1  0/21  Ram=1
+      цд@PSTRINGC7_703  0/86  Ram=4
+      Ё  юд*
+      цд@ITOF  0/29  Ram=2
+      цд@MULFF  0/117  Ram=13
+      цдlcd_gotoxy  0/18  Ram=4
+      Ё  юд*
+      цд@PSTRINGC7_703  0/86  Ram=4
+      Ё  юд*
+      цдlcd_gotoxy  0/18  Ram=4
+      Ё  юд*
       цд@PSTRINGCN7_703  0/87  Ram=5
       Ё  юд*
-      юд@delay_ms1  0/21  Ram=1
+      цд@PRINTF_L32D_703FPFPF  0/224  Ram=13
+      Ё  юд*
+      цд@delay_ms1  0/21  Ram=1
+      юд@PSTRINGC7_703  0/86  Ram=4
+         юд*

@@ -1,4 +1,4 @@
-CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 19:18
+CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 19:28
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
@@ -1686,10 +1686,11 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 048A:  MOVWF  0F
 048B:  BCF    03.6
 048C:  CALL   0F6
+....................     set_pwm1_duty(duty);         //Se confiugura el dutycycle de la PWM
 ....................     
 ....................     while(1){
 ....................     
-....................        set_pwm1_duty(duty);         //Se confiugura el dutycycle de la PWM
+....................        
 ....................        
 ....................        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
 048D:  MOVLW  00

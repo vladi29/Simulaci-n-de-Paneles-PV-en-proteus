@@ -13,11 +13,11 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   83    46  35  CodigoPic16f887.c
+   84    46  35  CodigoPic16f887.c
   798     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
   456    84  65  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
 ----- -----
- 1337   130 Total
+ 1338   130 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------

@@ -6,11 +6,10 @@
 #device ADC = 10     // Conversor Analógico Digital con  10 bits de resolución
 #fuses XT, NOWDT, NOPROTECT, NOLVP, PUT, BROWNOUT, INTRC_IO
 #use delay(clock=4000000)
-#include <LCD.C>
 #byte PORTA = 5
-#byte PORTD = 8
 
-int Timer2=9, PostCaler=1, duty = 20; // Preescaler;
+int16 duty = 20;
+int Timer2=9, PostCaler=1;// Preescaler;
 //Para 25KHz, el valor para modular el DutyCycle será 40 = 100%
 //Por lo tanto duty = 20 implica un DutyCycle de 50%
 float V1, V2=0, I1, I2=0, P1, P2;
@@ -28,8 +27,7 @@ void main(){
     setup_ccp1(ccp_pwm);                              //Con esto estamos configurando el modo PWM en la salida ccp1 (pin RC2)
     setup_adc_ports(all_analog);                      //Todos los puertos analogicos quedaran como analogicos
     setup_adc(adc_clock_internal);                    //Configuramos la velocidad del ADC
-    lcd_init();
-    lcd_putc("\f");
+    
     
     while(1){
     
@@ -71,12 +69,5 @@ void main(){
        }  
        V2 = V1;
        I2 = I1;
-       
-       lcd_gotoxy(1,1);                  //Ubiquese en la posicion 1,1
-       lcd_putc("El Duty Cycle es:");
-       lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
-       printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
-       delay_ms(500);
-       lcd_putc("\f");                   // Borramos LCD
     }
 }

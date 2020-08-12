@@ -10,7 +10,8 @@
 #byte PORTA = 5
 #byte PORTD = 8
 
-int Timer2=9, PostCaler=1, duty = 20; // Preescaler;
+int16 duty = 20;
+int Timer2=9, PostCaler=1;// Preescaler;
 //Para 25KHz, el valor para modular el DutyCycle será 40 = 100%
 //Por lo tanto duty = 20 implica un DutyCycle de 50%
 float V1, V2=0, I1, I2=0, P1, P2;
@@ -75,7 +76,7 @@ void main(){
        lcd_gotoxy(1,1);                  //Ubiquese en la posicion 1,1
        lcd_putc("El Duty Cycle es:");
        lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
-       printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
+       printf(lcd_putc,"D = %int16",duty);   //Muestra el valor numerico de la conversionconversion
        delay_ms(500);
        lcd_putc("\f");                   // Borramos LCD
     }

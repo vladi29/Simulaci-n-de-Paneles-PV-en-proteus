@@ -53,21 +53,23 @@ void main(){
          if(P1 - P2 > 0){
             if(V1 - V2 > 0){
                duty = duty + 1;
+               return;
             }
             else{
                duty = duty - 1;
+               return;
             }
          }
          else{
             if(V1 - V2 > 0){
                duty = duty - 1;
+               return;
             }
             else{
                duty = duty + 1;
+               return;
             }
          }
        }  
-       V2 = V1;
-       I2 = I1;
-    }
+      }
 }

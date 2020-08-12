@@ -11,17 +11,17 @@ Type=4
 1=CodigoPic16f887.c
 
 [defines]
-buildcount=26
+buildcount=30
 
 [Opened Files]
 1=CodigoPic16f887.c
-t1=63
+t1=57
 Count=1
 2=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
 t2=92
 
 [ProjectLog]
-Days=2
+Days=3
 D1=10-08-2020
 D1_L=32
 D1_L1=[44696]Stopped Editing.
@@ -80,6 +80,18 @@ D2_L13=[86076]Stopped Editing.
 D2_L14=[86076]Project Closed.
 D2_L15=[86135]Project Opened.
 D2_L16=[86153]Project Closed.
+D3=12-08-2020
+D3_L=10
+D3_L1=[62205]Project Opened.
+D3_L2=[62477]Started Editing.
+D3_L3=[62778]Stopped Editing.
+D3_L4=[63506]Started Editing.
+D3_L5=[64090]Stopped Editing.
+D3_L6=[65232]Started Editing.
+D3_L7=[65639]Stopped Editing.
+D3_L8=[66194]Started Editing.
+D3_L9=[67429]Stopped Editing.
+D3_L10=[68465]Started Editing.
 
 [fileformats]
 forcecoff=0

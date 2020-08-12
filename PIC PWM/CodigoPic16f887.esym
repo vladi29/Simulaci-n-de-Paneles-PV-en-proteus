@@ -1,10 +1,10 @@
-F N "main" 0 15 ""
-D G "__PCM__" 0 67 ""5.095d""
-D G "__DEVICE__" 0 67 "887"
-D G "__DATE__" 0 67 ""11-Aug-20""
-D G "__TIME__" 0 67 ""23:53:54""
-D G "_UNICODE" 0 67 ""?""
-D G "__EVAL" 0 67 ""?"" "Vladimir Alfaro - Universidad Simón Bolívar - 09/08/2020"
+F N "main" 0 17 ""
+D G "__PCM__" 0 75 ""5.095d""
+D G "__DEVICE__" 0 75 "887"
+D G "__DATE__" 0 75 ""12-Aug-20""
+D G "__TIME__" 0 75 ""19:08:41""
+D G "_UNICODE" 0 75 ""?""
+D G "__EVAL" 0 75 ""?"" "Vladimir Alfaro - Universidad Simón Bolívar - 09/08/2020"
 c L "set_tris_a" 1 1 6 "FUNCTION"
 f N "set_tris_a" 1 39 ""
 v L "value" 1 39 "int8" `55 
@@ -1207,37 +1207,33 @@ d G "INT_RB4" 1 792 "0x1100B08"
 d G "INT_RB5" 1 793 "0x1200B08"
 d G "INT_RB6" 1 794 "0x1400B08"
 d G "INT_RB7" 1 795 "0x1800B08"
-V G "Timer2" 0 11 "int8" `678 
-V G "PostCaler" 0 11 "int8" `679 
-V G "V1" 0 11 "int8" `680 
-V G "V2" 0 11 "int8" `681 
-V G "I1" 0 11 "int8" `682 
-V G "I2" 0 11 "int8" `683 
-V G "P1" 0 11 "int8" `684 
-V G "P2" 0 11 "int8" `685 
-V G "duty" 0 11 "int8" `686 
-C L "jump_to_isr" 0 11 2 "FUNCTION"
-V G "Vm" 0 13 "float" `687 
-V G "Im" 0 13 "float" `688 
-F N "main" 0 15 ""
-F G "main" 0 15 "void()" `689  "Para la PWM de 1Khz es necesario un Timer2=249, cuando la frecuencia del cristal es de 4Mhz,"
-C L "main" 0 11 5 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 2 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 11 1 "FUNCTION"
-C L "main" 0 57 1 "*No"
-C L "main" 0 57 1 "*No"
+V G "duty" 0 11 "int16" `678 
+V G "Timer2" 0 12 "int8" `679 
+V G "PostCaler" 0 12 "int8" `680 
+C L "jump_to_isr" 0 12 3 "FUNCTION"
+V G "V1" 0 15 "float" `681 
+V G "V2" 0 15 "float" `682 
+V G "I1" 0 15 "float" `683 
+V G "I2" 0 15 "float" `684 
+V G "P1" 0 15 "float" `685 
+V G "P2" 0 15 "float" `686 
+F N "main" 0 17 ""
+F G "main" 0 17 "void()" `687  "Para la PWM de 1Khz es necesario un Timer2=249, cuando la frecuencia del cristal es de 4Mhz,"
+C L "main" 0 12 5 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 1 "FUNCTION"
+C L "main" 0 12 2 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0

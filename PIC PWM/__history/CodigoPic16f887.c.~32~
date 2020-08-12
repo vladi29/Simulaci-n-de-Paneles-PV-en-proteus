@@ -8,11 +8,10 @@
 #use delay(clock=4000000)
 #byte PORTA = 5
 
-int16 duty = 20;
-int Timer2=9, PostCaler=1;// Preescaler;
+int Timer2=9, PostCaler=1, duty=20;// Preescaler;
 //Para 25KHz, el valor para modular el DutyCycle será 40 = 100%
 //Por lo tanto duty = 20 implica un DutyCycle de 50%
-float V1, V2=0, I1, I2=0, P1, P2;
+float Vm, Im, V1, V2=0, I1, I2=0, P1, P2;
 
 void main(){
     
@@ -67,7 +66,5 @@ void main(){
             }
          }
        }  
-       V2 = V1;
-       I2 = I1;
-    }
+      }
 }

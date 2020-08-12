@@ -1,27 +1,48 @@
 004-005 @WRITE_PROGRAM_MEMORY8.P1
 004-005 @READ_PROGRAM_MEMORY8.P2
 005     PORTA
-015     CCP_1_LOW
 015     CCP_1
+015     CCP_1_LOW
 016     CCP_1_HIGH
 01B     CCP_2_LOW
 01B     CCP_2
 01C     CCP_2_HIGH
-020     Timer2
-021     PostCaler
-022     V1
-023     V2
-024     I1
-025     I2
-026     P1
-027     P2
-028     duty
-029-02C Vm
-02D-030 Im
-031     @TRIS_C
-032     @MUL88.P1
-032     main.@SCRATCH1
-033     @MUL88.P1
+020-021 duty
+022     Timer2
+023     PostCaler
+024-027 V1
+028-02B V2
+02C-02F I1
+030-033 I2
+034-037 P1
+038-03B P2
+03C     @TRIS_C
+03D-03E @ITOF.P1
+03D-040 @MULFF.P2
+03D-040 @ADDFF.P3
+03D     main.@SCRATCH1
+03E     main.@SCRATCH2
+03F     main.@SCRATCH3
+040     main.@SCRATCH4
+041-044 @MULFF.P1
+041-044 @ADDFF.P2
+041-044 @FLT.P3
+045-048 @FLT.P1
+045     @MULFF.@SCRATCH1
+045     @ADDFF.@SCRATCH1
+046     @MULFF.@SCRATCH2
+046     @ADDFF.@SCRATCH2
+047     @MULFF.@SCRATCH3
+047     @ADDFF.@SCRATCH3
+048     @MULFF.@SCRATCH4
+048     @ADDFF.@SCRATCH4
+049     @MULFF.@SCRATCH5
+049     @FLT.@SCRATCH1
+049     @ADDFF.@SCRATCH5
+04A     @FLT.@SCRATCH2
+04A     @ADDFF.@SCRATCH6
+04B     @ADDFF.@SCRATCH7
+04C     @ADDFF.@SCRATCH8
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -29,25 +50,28 @@
 07A     @SCRATCH
 107.6   C1OUT
 108.6   C2OUT
-10D-10E @WRITE_PROGRAM_MEMORY8.P1
-10D-10E @READ_PROGRAM_MEMORY8.P2
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
-000004  @MUL88
-000029  main
-000029  @cinit1
-00004D  @cinit2
+000004  @ITOF
+000021  @MULFF
+000096  @FLT
+0000D5  @ADDFF
+000216  main
+000216  @cinit1
+00023F  @cinit2
 
 Project Directory:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\
 
 Project Files:
-    CodigoPic16f887.c                                       [11-Aug-20 23:53  CRC=80AC9C9F]
+    CodigoPic16f887.c                                       [12-Aug-20 19:08  CRC=004ACD97]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
 
-Source signature=DDB9F281
+Source signature=5D582379
 Program memory checksum=0000
-Hex file CRC=CEEB
+Hex file CRC=7FEE
 
 Units:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887 (main)

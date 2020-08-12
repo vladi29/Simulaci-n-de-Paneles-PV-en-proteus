@@ -1,8 +1,5 @@
-Compiling C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887 on 11-Aug-20 at 23:53
->>> Warning 244 "C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887.c" Line 28(19,23): Function Param:   :: 8-bit value passed to function, only 8 MSB of duty will be set
->>> Warning 203 "C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887.c" Line 30(1,1): Condition always TRUE
->>> Warning 202 "C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887.c" Line 13(7,9): Variable never used:   Vm
->>> Warning 202 "C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887.c" Line 13(11,13): Variable never used:   Im
-      Memory usage:   ROM=2%      RAM=7% - 7%
-      0 Errors,  4 Warnings.
+Compiling C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887 on 12-Aug-20 at 19:08
+>>> Warning 203 "C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887.c" Line 32(1,1): Condition always TRUE
+      Memory usage:   ROM=12%      RAM=10% - 14%
+      0 Errors,  1 Warnings.
 Build Successful.

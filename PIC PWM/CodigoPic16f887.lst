@@ -1,4 +1,4 @@
-CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 19:29
+CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 19:31
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
@@ -1561,7 +1561,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 .................... #byte PORTA = 5
 .................... #byte PORTD = 8
 .................... 
-.................... int Timer2=9, PostCaler=1, duty = 20; // Preescaler;
+.................... int Timer2=9, PostCaler=1, duty = 10; // Preescaler;
 .................... //Para 25KHz, el valor para modular el DutyCycle será 40 = 100%
 .................... //Por lo tanto duty = 20 implica un DutyCycle de 50%
 .................... float V1, V2=0, I1, I2=0, P1, P2;
@@ -1581,7 +1581,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 042F:  MOVWF  20
 0430:  MOVLW  01
 0431:  MOVWF  21
-0432:  MOVLW  14
+0432:  MOVLW  0A
 0433:  MOVWF  22
 0434:  CLRF   2A
 0435:  CLRF   29

@@ -136,7 +136,7 @@
    <POPUP w="695" x="582" flags="00000000" y="120" h="453" pid="0" iid="21">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="695" x="404" flags="00000000" y="163" h="453" pid="0" iid="1">
+   <POPUP w="695" x="484" flags="00008001" y="94" h="453" pid="0" iid="1">
     <PROPERTIES/>
    </POPUP>
   </PWI>

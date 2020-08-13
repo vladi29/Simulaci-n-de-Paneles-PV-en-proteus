@@ -12,13 +12,13 @@
 
 int16 duty = 20;
 int Timer2, PostCaler; // Preescaler;
-//Para 5KHz, el valor para modular el DutyCycle ser� 200 = 100%
-//Por lo tanto duty = 100 implica un DutyCycle de 50%
+//Para 25KHz, el valor para modular el DutyCycle ser� 40 = 100%
+//Por lo tanto duty = 20 implica un DutyCycle de 50%
 float V1, V2=0, I1, I2=0, P1, P2;
 
 void main(){
     
-    //Para la PWM de 10Khz es necesario un Timer2=9, cuando la frecuencia del cristal es de 4Mhz,
+    //Para la PWM de 25Khz es necesario un Timer2=9, cuando la frecuencia del cristal es de 4Mhz,
     //el PostCaler=1 y Preescaler=4, en base a la siguiente f�rmula:
     //Timer2 = (Td*fxtal/(4*Preescaler-PostCaler)) - 1
     Timer2 = 9;         //Para este valor del Timer se puede alcanzar una f=10KHz
@@ -58,7 +58,7 @@ void main(){
        I1=read_adc();               //Guardo en bits la corriente leida por el canal 1
        I1= I1*0.0048828125;         //Valor real del voltaje medido
   
-   /*-----------Algoritmo MPPT----------*/
+   /*-----------Algoritmo MPPT 1----------*/
        P1 = V1*I1;
        P2 = V2*I2;
        

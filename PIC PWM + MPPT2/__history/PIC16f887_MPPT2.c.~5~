@@ -56,36 +56,31 @@ void main(){
        I1=read_adc();               //Guardo en bits la corriente leida por el canal 1
        I1= I1*0.0048828125;         //Valor real del voltaje medido
   
-   /*-----------Algoritmo MPPT----------*/
+   /*-----------Algoritmo MPPT 2 ----------*/
        P1 = V1*I1;
        P2 = V2*I2;
        
-       if(P1-P2 == 0){
-         duty = duty;
+       if(P1 - P2 > 0){
+         if(V1 - V2 > 0){
+            if(I1 - I2 > 0){
+               duty = duty + 1;
+            }
+            else{
+               duty = duty - 1;
+            }
+         }
+         else{
+            duty = duty + 1;
+         }
        }
        else{
-          if(P1 - P2 > 0){
-            if(V1 - V2 > 0){
-               if(I1 - I2 > 0){
-                  duty = duty + 1;
-               }
-               else{
-                  duty = duty - 1;
-               }
-            }
-            else{
-               duty = duty + 1;
-            }
-          }
-          else{
-            if(V1 - V2 > 0){
-               duty = duty + 1;
-            }
-            else{
-                  duty = duty - 1;
-            }
-          }  
-       }
+         if(V1 - V2 > 0){
+            duty = duty + 1;
+         }
+         else{
+            duty = duty - 1;
+         }
+       }  
        V2 = V1;
        I2 = I1;
     }

@@ -1,0 +1,193 @@
+CCS PCM C Compiler, Version 5.095d, 1               13-Aug-20 11:42
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+               Filename:   C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\PIC_PWM.lst
+
+               ROM used:   137 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   11 (3%) at main() level
+                           12 (3%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   01B
+0003:  NOP
+.................... #include <16f887.h>
+.................... //////////// Standard Header file for the PIC16F887 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F887
+.................... 
+.................... #list
+.................... 
+.................... #device ADC=10 
+.................... #fuses XT,NOWDT,NOPROTECT,NOLVP,PUT,BROWNOUT,INTRC_IO  
+.................... #use delay(clock=4000000)  
+0004:  MOVLW  26
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  01
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  4A
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  BCF    0A.3
+0019:  BCF    0A.4
+001A:  GOTO   085 (RETURN)
+....................  
+.................... int16 duty=20;
+.................... int Timer2,Poscaler;
+....................  
+.................... void main() { 
+001B:  MOVF   03,W
+001C:  ANDLW  1F
+001D:  MOVWF  03
+001E:  MOVLW  61
+001F:  BSF    03.5
+0020:  MOVWF  0F
+0021:  CLRF   10
+0022:  MOVF   0F,W
+0023:  BCF    03.5
+0024:  CLRF   21
+0025:  MOVLW  14
+0026:  MOVWF  20
+0027:  MOVLW  FF
+0028:  MOVWF  24
+0029:  BSF    03.5
+002A:  BSF    03.6
+002B:  MOVF   09,W
+002C:  ANDLW  C0
+002D:  MOVWF  09
+002E:  BCF    03.6
+002F:  BCF    1F.4
+0030:  BCF    1F.5
+0031:  MOVLW  00
+0032:  BSF    03.6
+0033:  MOVWF  08
+0034:  BCF    03.5
+0035:  CLRF   07
+0036:  CLRF   08
+0037:  CLRF   09
+0038:  BCF    03.7
+....................    // Generemos una Señal cuadrada de 1 Khz
+....................    Timer2=9;    //Se carga timer 2 con 9 como lo vimos en la pagina
+0039:  MOVLW  09
+003A:  BCF    03.6
+003B:  MOVWF  22
+....................    //Preescaler=4;  //Preescaler solo puede tomar valores de: 1 - 4 - 16
+....................    //Para el preescaler colocamos "t2_div_by_4"
+....................    Poscaler=1;  //Preescaler solo puede tomar valores de: 1
+003C:  MOVLW  01
+003D:  MOVWF  23
+....................    
+....................    setup_timer_2(t2_div_by_4,Timer2,Poscaler);   //Configuracion de Timer 2 para establecer frec. PWM a 1kHz
+003E:  SUBWF  23,W
+003F:  MOVWF  78
+0040:  RLF    78,W
+0041:  MOVWF  77
+0042:  RLF    77,F
+0043:  RLF    77,F
+0044:  MOVLW  F8
+0045:  ANDWF  77,F
+0046:  MOVF   77,W
+0047:  IORLW  05
+0048:  MOVWF  12
+0049:  MOVF   22,W
+004A:  BSF    03.5
+004B:  MOVWF  12
+....................    setup_ccp1(ccp_pwm);                //Configurar modulo CCP1 en modo PWM
+004C:  BCF    03.5
+004D:  BCF    24.2
+004E:  MOVF   24,W
+004F:  BSF    03.5
+0050:  MOVWF  07
+0051:  BCF    03.5
+0052:  BCF    07.2
+0053:  MOVLW  0C
+0054:  MOVWF  17
+0055:  BSF    03.5
+0056:  CLRF   1B
+0057:  CLRF   1C
+0058:  MOVLW  01
+0059:  MOVWF  1D
+....................    setup_adc_ports(all_analog);        //Configurar ADC
+005A:  BSF    03.6
+005B:  MOVF   09,W
+005C:  ANDLW  C0
+005D:  IORLW  1F
+005E:  MOVWF  09
+005F:  BCF    03.6
+0060:  BCF    1F.4
+0061:  BCF    1F.5
+0062:  MOVLW  FF
+0063:  BSF    03.6
+0064:  MOVWF  08
+....................    setup_adc(adc_clock_internal);
+0065:  BCF    03.5
+0066:  BCF    03.6
+0067:  BSF    1F.6
+0068:  BSF    1F.7
+0069:  BSF    03.5
+006A:  BSF    1F.7
+006B:  BCF    03.5
+006C:  BSF    1F.0
+....................    while(1)
+....................    { 
+....................         set_pwm1_duty(duty);
+006D:  MOVF   21,W
+006E:  MOVWF  79
+006F:  MOVF   20,W
+0070:  MOVWF  78
+0071:  RRF    79,F
+0072:  RRF    78,F
+0073:  RRF    79,F
+0074:  RRF    78,F
+0075:  RRF    79,F
+0076:  MOVF   78,W
+0077:  MOVWF  15
+0078:  RRF    79,F
+0079:  RRF    79,W
+007A:  ANDLW  30
+007B:  MOVWF  77
+007C:  MOVF   17,W
+007D:  ANDLW  CF
+007E:  IORWF  77,W
+007F:  MOVWF  17
+....................         delay_ms(1000);
+0080:  MOVLW  04
+0081:  MOVWF  25
+0082:  MOVLW  FA
+0083:  MOVWF  26
+0084:  GOTO   004
+0085:  DECFSZ 25,F
+0086:  GOTO   082
+0087:  GOTO   06D
+....................    }
+.................... }
+0088:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2FE4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

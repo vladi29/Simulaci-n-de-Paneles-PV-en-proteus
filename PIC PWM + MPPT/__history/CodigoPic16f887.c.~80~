@@ -36,17 +36,8 @@ void main(){
     
     while(1){
     
-       set_pwm1_duty(duty);                //Se confiugura el dutycycle de la PWM 
+       set_pwm1_duty(duty);         //Se confiugura el dutycycle de la PWM 
        
-       /*------Imprimir datos en LCD---------*/
-       //lcd_gotoxy(1,1);                  //Ubiquese en la posicion 1,1
-       //lcd_putc("El Duty Cycle es:");
-       //lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
-       //printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
-       //delay_ms(1000);
-       //lcd_putc("\f");                   // Borramos LCD
-       
-         
        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
        delay_us(20);                //Retardo de 50 us para leer la data
        V1=read_adc();               //Guardo en bits el voltaje leido por el canal 0
@@ -85,4 +76,10 @@ void main(){
        V2 = V1;
        I2 = I1;
     }
+    //lcd_gotoxy(1,1);                  //Ubiquese en la posicion 1,1
+    //lcd_putc("El Duty Cycle es:");
+    //lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
+    //printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
+    //delay_ms(1000);
+    //lcd_putc("\f");                   // Borramos LCD
 }

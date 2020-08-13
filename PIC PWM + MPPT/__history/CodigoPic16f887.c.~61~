@@ -5,23 +5,21 @@
 #include <16f887.h>
 #device ADC = 10     // Conversor Analógico Digital con  10 bits de resolución
 #fuses XT, NOWDT, NOPROTECT, NOLVP, PUT, BROWNOUT, INTRC_IO
-#use delay(clock=4000000)
-//#include <LCD.C>
+#use delay(clock=8000000)
 #byte PORTA = 5
 //#byte PORTD = 8
 
-int16 duty = 20;
-int Timer2, PostCaler; // Preescaler;
+int Timer2, PostCaler, duty=100; // Preescaler;
 //Para 5KHz, el valor para modular el DutyCycle será 200 = 100%
 //Por lo tanto duty = 100 implica un DutyCycle de 50%
 float V1, V2=0, I1, I2=0, P1, P2;
 
 void main(){
     
-    //Para la PWM de 10Khz es necesario un Timer2=9, cuando la frecuencia del cristal es de 4Mhz,
+    //Para la PWM de 25Khz es necesario un Timer2=9, cuando la frecuencia del cristal es de 4Mhz,
     //el PostCaler=1 y Preescaler=4, en base a la siguiente fórmula:
     //Timer2 = (Td*fxtal/(4*Preescaler-PostCaler)) - 1
-    Timer2 = 9;         //Para este valor del Timer se puede alcanzar una f=10KHz
+    Timer2 = 49;         //Para este valor del Timer se puede alcanzar una f=5KHz
     PostCaler = 1;      // Sólo puede tomar valores de 1, 4 o 16, igual que el preescaler
     //Preescaler = 4;
     
@@ -36,17 +34,8 @@ void main(){
     
     while(1){
     
-       set_pwm1_duty(duty);                //Se confiugura el dutycycle de la PWM 
+       set_pwm1_duty(100);         //Se confiugura el dutycycle de la PWM 
        
-       /*------Imprimir datos en LCD---------*/
-       //lcd_gotoxy(1,1);                  //Ubiquese en la posicion 1,1
-       //lcd_putc("El Duty Cycle es:");
-       //lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
-       //printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
-       //delay_ms(1000);
-       //lcd_putc("\f");                   // Borramos LCD
-       
-         
        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
        delay_us(20);                //Retardo de 50 us para leer la data
        V1=read_adc();               //Guardo en bits el voltaje leido por el canal 0

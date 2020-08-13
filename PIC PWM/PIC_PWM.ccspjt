@@ -1,0 +1,44 @@
+[PROJECT]
+Target=PIC_PWM.hex
+Processor_Text=PIC16F887
+CCSVersion=5.095d
+Compiler=PCM
+[Target Data]
+FileList=PIC_PWM.c
+[PIC_PWM.c]
+Type=4
+[mru-list]
+1=PIC_PWM.c
+
+[defines]
+buildcount=2
+
+[Opened Files]
+1=PIC_PWM.c
+t1=14
+Count=1
+
+[ProjectLog]
+Days=1
+D1=13-08-2020
+D1_L=10
+D1_L1=[547]Stopped Editing.
+D1_L2=[616]Started Editing.
+D1_L3=[631]Stopped Editing.
+TotalEdit=2
+TotalDebug=0
+D1_E=2
+D1_D=0
+D1_L4=[632]Project Closed.
+D1_L5=[38429]Project Opened.
+D1_L6=[38446]Project Closed.
+D1_L7=[42074]Project Opened.
+D1_L8=[42086]Started Editing.
+D1_L9=[42420]Stopped Editing.
+D1_L10=[42825]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=PIC_PWM (main)

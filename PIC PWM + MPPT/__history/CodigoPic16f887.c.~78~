@@ -6,7 +6,6 @@
 #device ADC = 10     // Conversor Analógico Digital con  10 bits de resolución
 #fuses XT, NOWDT, NOPROTECT, NOLVP, PUT, BROWNOUT, INTRC_IO
 #use delay(clock=4000000)
-//#include <LCD.C>
 #byte PORTA = 5
 //#byte PORTD = 8
 
@@ -29,24 +28,15 @@ void main(){
     setup_ccp1(ccp_pwm);                              //Con esto estamos configurando el modo PWM en la salida ccp1 (pin RC2)
     setup_adc_ports(all_analog);                      //Todos los puertos analogicos quedaran como analogicos
     setup_adc(adc_clock_internal);                    //Configuramos la velocidad del ADC
-    set_tris_a(0b00000011);                           //Configuro los pines RA0 y RA1 como entradas
+    //set_tris_a(0b00000011);                           //Configuro los pines RA0 y RA1 como entradas
     //lcd_init();
     //lcd_putc("\f");
     
     
     while(1){
     
-       set_pwm1_duty(duty);                //Se confiugura el dutycycle de la PWM 
+       set_pwm1_duty(duty);         //Se confiugura el dutycycle de la PWM 
        
-       /*------Imprimir datos en LCD---------*/
-       //lcd_gotoxy(1,1);                  //Ubiquese en la posicion 1,1
-       //lcd_putc("El Duty Cycle es:");
-       //lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
-       //printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
-       //delay_ms(1000);
-       //lcd_putc("\f");                   // Borramos LCD
-       
-         
        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
        delay_us(20);                //Retardo de 50 us para leer la data
        V1=read_adc();               //Guardo en bits el voltaje leido por el canal 0

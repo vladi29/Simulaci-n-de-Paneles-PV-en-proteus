@@ -1,136 +1,80 @@
 004-005 @WRITE_PROGRAM_MEMORY8.P1
 004-005 @READ_PROGRAM_MEMORY8.P2
 005     PORTA
-008     lcd
-008     lcdlat
-008     PORTD
 015     CCP_1
 015     CCP_1_LOW
 016     CCP_1_HIGH
 01B     CCP_2_LOW
 01B     CCP_2
 01C     CCP_2_HIGH
-020     Timer2
-021     PostCaler
-022     duty
-023-026 V1
-027-02A V2
-02B-02E I1
-02F-032 I2
-033-036 P1
-037-03A P2
-03B     @TRIS_C
-03C-03D @sprintf_string
-03E-03F @ITOF.P1
-03E     @PRINTF_D_703.P2
-03E     @PSTRINGCN7_703.P3
-03E     lcd_init.i
-03E-041 @ADDFF.P1
-03E-041 @MULFF.P2
-03E     MAIN.@SCRATCH1
-03E     @PSTRINGC7_703.@SCRATCH1
-03F-042 lcd_init.LCD_INIT_STRING
-03F     @PRINTF_D_703.P1
-03F     MAIN.@SCRATCH2
-03F     @PSTRINGC7_703.@SCRATCH2
-03F     @PSTRINGCN7_703.@SCRATCH1
-040     MAIN.@SCRATCH3
-040     @PSTRINGC7_703.@SCRATCH3
-040     @PSTRINGCN7_703.@SCRATCH2
-040     @PRINTF_D_703.@SCRATCH1
-041     MAIN.@SCRATCH4
-041     @PSTRINGC7_703.@SCRATCH4
-041     @PSTRINGCN7_703.@SCRATCH3
-041     @PRINTF_D_703.@SCRATCH2
-042-045 @ADDFF.P1
-042-045 @MULFF.P2
-042-045 @FLT.P3
-042     @PSTRINGCN7_703.@SCRATCH4
-042     @PRINTF_D_703.@SCRATCH3
-043     lcd_init.@SCRATCH1
-043     @PRINTF_D_703.@SCRATCH4
-044     lcd_putc.c
-044     @DIV88.P1
-045     lcd_gotoxy.x
-045     @DIV88.P1
-045     @delay_ms1.P2
-046-049 @FLT.P1
-046     lcd_gotoxy.y
-046     @MULFF.@SCRATCH1
-046     @ADDFF.@SCRATCH1
-046     @DIV88.@SCRATCH1
-047     lcd_gotoxy.address
-047     @MULFF.@SCRATCH2
-047     @ADDFF.@SCRATCH2
-048     lcd_gotoxy.@SCRATCH1
-048     @MULFF.@SCRATCH3
-048     @ADDFF.@SCRATCH3
-049     lcd_send_byte.address
-049     @MULFF.@SCRATCH4
-049     @ADDFF.@SCRATCH4
-04A     lcd_send_byte.n
-04A     @MULFF.@SCRATCH5
-04A     @FLT.@SCRATCH1
-04A     @ADDFF.@SCRATCH5
-04B     lcd_read_byte.low
-04B     lcd_send_byte.@SCRATCH1
-04B     @FLT.@SCRATCH2
-04B     @ADDFF.@SCRATCH6
-04C     lcd_read_byte.high
-04C     lcd_send_nibble.n
-04C     @ADDFF.@SCRATCH7
-04D     lcd_read_byte.@SCRATCH1
-04D     @ADDFF.@SCRATCH8
+020-021 duty
+022     Timer2
+023     PostCaler
+024-027 V1
+028-02B V2
+02C-02F I1
+030-033 I2
+034-037 P1
+038-03B P2
+03C     @TRIS_C
+03D-03E @ITOF.P1
+03D-040 @MULFF.P2
+03D-040 @ADDFF.P3
+03D     main.@SCRATCH1
+03E     main.@SCRATCH2
+03F     main.@SCRATCH3
+040     main.@SCRATCH4
+041-044 @MULFF.P1
+041-044 @ADDFF.P2
+041-044 @FLT.P3
+045-048 @FLT.P1
+045     @MULFF.@SCRATCH1
+045     @ADDFF.@SCRATCH1
+046     @MULFF.@SCRATCH2
+046     @ADDFF.@SCRATCH2
+047     @MULFF.@SCRATCH3
+047     @ADDFF.@SCRATCH3
+048     @MULFF.@SCRATCH4
+048     @ADDFF.@SCRATCH4
+049     @MULFF.@SCRATCH5
+049     @FLT.@SCRATCH1
+049     @ADDFF.@SCRATCH5
+04A     @FLT.@SCRATCH2
+04A     @ADDFF.@SCRATCH6
+04B     @ADDFF.@SCRATCH7
+04C     @ADDFF.@SCRATCH8
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
 079     @SCRATCH
 07A     @SCRATCH
-088     lcdtris
 107.6   C1OUT
 108.6   C2OUT
-10D-10E @WRITE_PROGRAM_MEMORY8.P1
-10D-10E @READ_PROGRAM_MEMORY8.P2
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
-000004  @const730.call
-000005  @const746.call
-00000E  @const747.call
-000012  @const756.call
-000013  @delay_ms1
-000028  lcd_send_nibble
-000034  lcd_read_nibble
-00003A  lcd_send_byte
-000040  lcd_read_byte
-00007A  lcd_init
-0000B8  lcd_gotoxy
-0000CA  lcd_putc
-0000F6  @PSTRINGC7_703
-00014C  @ITOF
-000169  @MULFF
-0001DE  @FLT
-00021D  @ADDFF
-00035E  @PSTRINGCN7_703
-0003B7  @DIV88
-0003CC  @PRINTF_D_703
-000425  @cinit1
-000425  MAIN
-000449  @cinit2
+000004  @ITOF
+000021  @MULFF
+000096  @FLT
+0000D5  @ADDFF
+000216  main
+000216  @cinit1
+00023B  @cinit2
 
 Project Directory:
-    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\
+    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM + MPPT\
 
 Project Files:
-    CodigoPic16f887.c                                       [12-Aug-20 20:34  CRC=BCAD4754]
+    CodigoPic16f887.c                                       [13-Aug-20 15:21  CRC=A3B9BE02]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-Feb-16 10:05  CRC=D1A6378A]
 
-Source signature=0E806159
+Source signature=00C713E4
 Program memory checksum=0000
-Hex file CRC=66DF
+Hex file CRC=CFDB
 
 Units:
-    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887 (main)
+    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM + MPPT\CodigoPic16f887 (main)
 
 Compiler Settings:
     Processor:      PIC16F887

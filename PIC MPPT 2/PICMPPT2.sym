@@ -1,0 +1,154 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+005     PORTA
+008     lcdlat
+008     lcd
+008     PORTD
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-023 V1
+024-027 I1
+028-02B V2
+02C-02F I2
+030-033 P1
+034-037 P2
+038     duty
+039-03A @sprintf_string
+03B     @PRINTF_D_703.P1
+03B-03E @MULFF.P2
+03B-03C @ITOF.P3
+03B     @PSTRINGCN7_703.P4
+03B     lcd_init.i
+03B-03E @ADDFF.P1
+03B     MAIN.@SCRATCH1
+03B     @PSTRINGC7_703.@SCRATCH1
+03C-03F lcd_init.LCD_INIT_STRING
+03C     @PRINTF_D_703.P1
+03C     MAIN.@SCRATCH2
+03C     @PSTRINGC7_703.@SCRATCH2
+03C     @PSTRINGCN7_703.@SCRATCH1
+03D     MAIN.@SCRATCH3
+03D     @PSTRINGC7_703.@SCRATCH3
+03D     @PSTRINGCN7_703.@SCRATCH2
+03D     @PRINTF_D_703.@SCRATCH1
+03E     MAIN.@SCRATCH4
+03E     @PSTRINGC7_703.@SCRATCH4
+03E     @PSTRINGCN7_703.@SCRATCH3
+03E     @PRINTF_D_703.@SCRATCH2
+03F-042 @MULFF.P1
+03F-042 @ADDFF.P2
+03F-042 @FLT.P3
+03F     @PSTRINGCN7_703.@SCRATCH4
+03F     @PRINTF_D_703.@SCRATCH3
+040     lcd_init.@SCRATCH1
+040     @PRINTF_D_703.@SCRATCH4
+041     @DIV88.P1
+041     lcd_putc.c
+042     lcd_gotoxy.x
+042     @delay_ms1.P1
+042     @DIV88.P2
+043     lcd_gotoxy.y
+043-046 @FLT.P1
+043     @MULFF.@SCRATCH1
+043     @ADDFF.@SCRATCH1
+043     @DIV88.@SCRATCH1
+044     lcd_gotoxy.address
+044     @MULFF.@SCRATCH2
+044     @ADDFF.@SCRATCH2
+045     lcd_gotoxy.@SCRATCH1
+045     @MULFF.@SCRATCH3
+045     @ADDFF.@SCRATCH3
+046     lcd_send_byte.address
+046     @MULFF.@SCRATCH4
+046     @ADDFF.@SCRATCH4
+047     lcd_send_byte.n
+047     @MULFF.@SCRATCH5
+047     @FLT.@SCRATCH1
+047     @ADDFF.@SCRATCH5
+048     lcd_read_byte.low
+048     lcd_send_byte.@SCRATCH1
+048     @FLT.@SCRATCH2
+048     @ADDFF.@SCRATCH6
+049     lcd_send_nibble.n
+049     lcd_read_byte.high
+049     @ADDFF.@SCRATCH7
+04A     lcd_read_byte.@SCRATCH1
+04A     @ADDFF.@SCRATCH8
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const727.call
+000005  @const743.call
+00000E  @const744.call
+000012  @const753.call
+000013  @delay_ms1
+000028  lcd_send_nibble
+000034  lcd_read_nibble
+00003A  lcd_send_byte
+000040  lcd_read_byte
+00007A  lcd_init
+0000B8  lcd_gotoxy
+0000CA  lcd_putc
+0000F6  @PSTRINGC7_703
+00014C  @ITOF
+000169  @MULFF
+0001DE  @FLT
+00021D  @ADDFF
+00035E  @PSTRINGCN7_703
+0003B7  @DIV88
+0003CC  @PRINTF_D_703
+000425  @cinit1
+000425  MAIN
+000443  @cinit2
+
+Project Directory:
+    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\
+
+Project Files:
+    PICMPPT2.c                                              [12-Aug-20 22:24  CRC=E77D6D92]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-Feb-16 10:05  CRC=D1A6378A]
+
+Source signature=39508797
+Program memory checksum=0000
+Hex file CRC=31AB
+
+Units:
+    C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\PICMPPT2 (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   PICMPPT2.xsym
+    Errors:      PICMPPT2.err
+    Ext Symbols: PICMPPT2.esym
+    INHX8:       PICMPPT2.hex
+    Symbols:     PICMPPT2.sym
+    List:        PICMPPT2.lst
+    Debug/COFF:  PICMPPT2.cof
+    Project:     PICMPPT2.ccspjt
+    Call Tree:   PICMPPT2.tre
+    Statistics:  PICMPPT2.STA

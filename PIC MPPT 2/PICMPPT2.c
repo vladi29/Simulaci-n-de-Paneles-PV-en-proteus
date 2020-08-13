@@ -1,0 +1,69 @@
+#INCLUDE <16f887.h>
+#device adc=10
+//#USE DELAY(CLOCK=4000000) // Reloj interno 4MHz
+#use delay(clock=4000000,crystal)//Crystal Externo 4MHz
+#FUSES XT,NOPROTECT,NOWDT,NOBROWNOUT,NOPUT,NOLVP
+#INCLUDE <LCD.C>
+ 
+#BYTE PORTA= 5    //Se especifica la ubicacion en memoria del puerto A
+#BYTE PORTD= 8    //Se especifica la ubicacion en memoria del puerto D
+ 
+float V1, I1, V2=0, I2=0, P1, P2;        //Variable almacena los bits
+int duty = 50;
+ 
+void main(){
+   set_tris_a(0b00000011);          //Configuro los pines RA0 y RA1 como entrada
+   set_tris_d(0);                   //Pongo el PuertoD como Salida
+   setup_adc_ports(all_analog);     //Pongo todo el puerto a analogo
+   setup_adc(adc_clock_internal);   //Selecciono reloj interno para conversion
+   lcd_init();                      //Inicializo el LCD
+   lcd_putc("\f");                  //Borro el LCD
+   
+   while(1)
+   {
+       set_adc_channel(0);          //Selecciono el canal 0 (RA0)
+       delay_us(50);                //Retardo de 50 us para leer la data
+       V1=read_adc();               //Guardo en bits el voltaje leido por el canal 0
+       V1 = V1*0.0048828125;        //Valor real del voltaje medido
+       
+       set_adc_channel(1);          //Selecciono el canal 1 (RA1)
+       delay_us(50);                //Retardo de 50 us para leer la data
+       I1=read_adc();               //Guardo en bits la corriente leida por el canal 1
+       I1= I1*0.0048828125;         //Valor real del voltaje medido
+   
+   /*-----------Algoritmo MPPT----------*/
+       P1 = V1*I1;
+       P2 = V2*I2;
+       
+       if(P1 == P2){
+         duty = duty;
+       }
+       else{
+         if(P1 - P2 > 0){
+            if(V1 - V2 > 0){
+               duty = duty + 1;
+            }
+            else{
+               duty = duty - 1;
+            }
+         }
+         else{
+            if(V1 - V2 > 0){
+               duty = duty - 1;
+            }
+            else{
+               duty = duty + 1;
+            }
+         }
+       }  
+       V2 = V1;
+       I2 = I1;
+       
+       lcd_gotoxy(1,1);                  //Ubiquese en la posicion 1,1
+       lcd_putc("El Duty Cycle es:");
+       lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
+       printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
+       delay_ms(1000);
+       lcd_putc("\f");                   // Borramos LCD
+   }
+}

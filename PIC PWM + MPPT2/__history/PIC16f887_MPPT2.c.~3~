@@ -45,6 +45,7 @@ void main(){
        //printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
        //delay_ms(1000);
        //lcd_putc("\f");                   // Borramos LCD
+       
          
        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
        delay_us(20);                //Retardo de 50 us para leer la data

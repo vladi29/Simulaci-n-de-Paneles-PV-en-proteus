@@ -1,0 +1,17 @@
+[PROJECT]
+Target=PIC16f887_MPPT2.hex
+Processor_Text=PIC16F887
+CCSVersion=5.095d
+Compiler=PCM
+[Target Data]
+FileList=PIC16f887_MPPT2.c
+[PIC16f887_MPPT2.c]
+Type=4
+[mru-list]
+1=PIC16f887_MPPT2.c
+[Units]
+Count=1
+1=PIC16f887_MPPT2 (main)
+
+[defines]
+buildcount=1

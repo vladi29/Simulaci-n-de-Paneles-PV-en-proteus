@@ -1,9 +1,9 @@
-//Vladimir Alfaro - Universidad Simón Bolívar - 09/08/2020 
-//Con este código se pretende diseñar el algoritmo de control MMPT para un microcontrolador PIC16F887
+//Vladimir Alfaro - Universidad Simï¿½n Bolï¿½var - 09/08/2020 
+//Con este cï¿½digo se pretende diseï¿½ar el algoritmo de control MMPT para un microcontrolador PIC16F887
 //-----------------------------------------------------------------------------------------------------
 
 #include <16f887.h>
-#device ADC = 10     // Conversor Analógico Digital con  10 bits de resolución
+#device ADC = 10     // Conversor Analï¿½gico Digital con  10 bits de resoluciï¿½n
 #fuses XT, NOWDT, NOPROTECT, NOLVP, PUT, BROWNOUT, INTRC_IO
 #use delay(clock=4000000)
 //#include <LCD.C>
@@ -12,24 +12,25 @@
 
 int16 duty = 20;
 int Timer2, PostCaler; // Preescaler;
-//Para 5KHz, el valor para modular el DutyCycle será 200 = 100%
+//Para 5KHz, el valor para modular el DutyCycle serï¿½ 200 = 100%
 //Por lo tanto duty = 100 implica un DutyCycle de 50%
 float V1, V2=0, I1, I2=0, P1, P2;
 
 void main(){
     
     //Para la PWM de 10Khz es necesario un Timer2=9, cuando la frecuencia del cristal es de 4Mhz,
-    //el PostCaler=1 y Preescaler=4, en base a la siguiente fórmula:
+    //el PostCaler=1 y Preescaler=4, en base a la siguiente fï¿½rmula:
     //Timer2 = (Td*fxtal/(4*Preescaler-PostCaler)) - 1
     Timer2 = 9;         //Para este valor del Timer se puede alcanzar una f=10KHz
-    PostCaler = 1;      // Sólo puede tomar valores de 1, 4 o 16, igual que el preescaler
+    PostCaler = 1;      // Sï¿½lo puede tomar valores de 1, 4 o 16, igual que el preescaler
     //Preescaler = 4;
     
-    setup_timer_2(t2_div_by_4, Timer2, PostCaler);    //Configuración del timer 2, preescaler=4, timer2=49, postcaler=1
+    setup_timer_2(t2_div_by_4, Timer2, PostCaler);    //Configuraciï¿½n del timer 2, preescaler=4, timer2=49, postcaler=1
     setup_ccp1(ccp_pwm);                              //Con esto estamos configurando el modo PWM en la salida ccp1 (pin RC2)
     setup_adc_ports(all_analog);                      //Todos los puertos analogicos quedaran como analogicos
     setup_adc(adc_clock_internal);                    //Configuramos la velocidad del ADC
     set_tris_a(0b00000011);                           //Configuro los pines RA0 y RA1 como entradas
+    //set_tris_d(0);                                  //Pongo el PuertoD como Salida
     //lcd_init();
     //lcd_putc("\f");
     

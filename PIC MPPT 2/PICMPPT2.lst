@@ -1,10 +1,10 @@
-CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 22:32
+CCS PCM C Compiler, Version 5.095d, 1               13-Aug-20 17:54
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
                Filename:   C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\PICMPPT2.lst
 
-               ROM used:   1531 words (19%)
+               ROM used:   1572 words (19%)
                            Largest free fragment is 2048
                RAM used:   36 (10%) at main() level
                            48 (13%) worst case
@@ -747,7 +747,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 03B3:  GOTO   35E
 03B4:  BCF    0A.3
 03B5:  BCF    0A.4
-03B6:  GOTO   5E6 (RETURN)
+03B6:  GOTO   60F (RETURN)
 03B7:  MOVF   42,W
 03B8:  CLRF   78
 03B9:  SUBWF  41,W
@@ -857,7 +857,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 0421:  CALL   0CA
 0422:  BCF    0A.3
 0423:  BCF    0A.4
-0424:  GOTO   5EB (RETURN)
+0424:  GOTO   614 (RETURN)
 .................... 
 .................... #list
 .................... 
@@ -1817,7 +1817,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 0509:  MOVF   77,W
 050A:  MOVWF  34
 ....................        
-....................        if(P1 - P2 > 0){
+....................        if(P1-P2 == 0){
 050B:  BSF    03.1
 050C:  MOVF   33,W
 050D:  MOVWF  3E
@@ -1844,38 +1844,41 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 0522:  MOVWF  3C
 0523:  MOVF   77,W
 0524:  MOVWF  3B
-0525:  CLRF   42
-0526:  CLRF   41
-0527:  CLRF   40
-0528:  CLRF   3F
-0529:  MOVF   3E,W
-052A:  MOVWF  46
-052B:  MOVF   3D,W
-052C:  MOVWF  45
-052D:  MOVF   3C,W
-052E:  MOVWF  44
-052F:  MOVF   3B,W
-0530:  MOVWF  43
+0525:  MOVF   3E,W
+0526:  MOVWF  42
+0527:  MOVF   3D,W
+0528:  MOVWF  41
+0529:  MOVF   3C,W
+052A:  MOVWF  40
+052B:  MOVF   3B,W
+052C:  MOVWF  3F
+052D:  CLRF   46
+052E:  CLRF   45
+052F:  CLRF   44
+0530:  CLRF   43
 0531:  CALL   31F
-0532:  BTFSS  03.0
-0533:  GOTO   58F
-....................          if(V1 - V2 > 0){
+0532:  BTFSC  03.2
+....................          duty = duty;
+....................        }
+0533:  GOTO   5E6
+....................        else{
+....................           if(P1 - P2 > 0){
 0534:  BSF    03.1
-0535:  MOVF   23,W
+0535:  MOVF   33,W
 0536:  MOVWF  3E
-0537:  MOVF   22,W
+0537:  MOVF   32,W
 0538:  MOVWF  3D
-0539:  MOVF   21,W
+0539:  MOVF   31,W
 053A:  MOVWF  3C
-053B:  MOVF   20,W
+053B:  MOVF   30,W
 053C:  MOVWF  3B
-053D:  MOVF   2B,W
+053D:  MOVF   37,W
 053E:  MOVWF  42
-053F:  MOVF   2A,W
+053F:  MOVF   36,W
 0540:  MOVWF  41
-0541:  MOVF   29,W
+0541:  MOVF   35,W
 0542:  MOVWF  40
-0543:  MOVF   28,W
+0543:  MOVF   34,W
 0544:  MOVWF  3F
 0545:  CALL   1DE
 0546:  MOVF   7A,W
@@ -1900,24 +1903,24 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 0559:  MOVWF  43
 055A:  CALL   31F
 055B:  BTFSS  03.0
-055C:  GOTO   58C
-....................             if(I1 - I2 > 0){
+055C:  GOTO   5B8
+....................             if(V1 - V2 > 0){
 055D:  BSF    03.1
-055E:  MOVF   27,W
+055E:  MOVF   23,W
 055F:  MOVWF  3E
-0560:  MOVF   26,W
+0560:  MOVF   22,W
 0561:  MOVWF  3D
-0562:  MOVF   25,W
+0562:  MOVF   21,W
 0563:  MOVWF  3C
-0564:  MOVF   24,W
+0564:  MOVF   20,W
 0565:  MOVWF  3B
-0566:  MOVF   2F,W
+0566:  MOVF   2B,W
 0567:  MOVWF  42
-0568:  MOVF   2E,W
+0568:  MOVF   2A,W
 0569:  MOVWF  41
-056A:  MOVF   2D,W
+056A:  MOVF   29,W
 056B:  MOVWF  40
-056C:  MOVF   2C,W
+056C:  MOVF   28,W
 056D:  MOVWF  3F
 056E:  CALL   1DE
 056F:  MOVF   7A,W
@@ -1942,154 +1945,196 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 0582:  MOVWF  43
 0583:  CALL   31F
 0584:  BTFSS  03.0
-0585:  GOTO   589
-....................                duty = duty + 1;
-0586:  MOVLW  01
-0587:  ADDWF  38,F
+0585:  GOTO   5B5
+....................                if(I1 - I2 > 0){
+0586:  BSF    03.1
+0587:  MOVF   27,W
+0588:  MOVWF  3E
+0589:  MOVF   26,W
+058A:  MOVWF  3D
+058B:  MOVF   25,W
+058C:  MOVWF  3C
+058D:  MOVF   24,W
+058E:  MOVWF  3B
+058F:  MOVF   2F,W
+0590:  MOVWF  42
+0591:  MOVF   2E,W
+0592:  MOVWF  41
+0593:  MOVF   2D,W
+0594:  MOVWF  40
+0595:  MOVF   2C,W
+0596:  MOVWF  3F
+0597:  CALL   1DE
+0598:  MOVF   7A,W
+0599:  MOVWF  3E
+059A:  MOVF   79,W
+059B:  MOVWF  3D
+059C:  MOVF   78,W
+059D:  MOVWF  3C
+059E:  MOVF   77,W
+059F:  MOVWF  3B
+05A0:  CLRF   42
+05A1:  CLRF   41
+05A2:  CLRF   40
+05A3:  CLRF   3F
+05A4:  MOVF   3E,W
+05A5:  MOVWF  46
+05A6:  MOVF   3D,W
+05A7:  MOVWF  45
+05A8:  MOVF   3C,W
+05A9:  MOVWF  44
+05AA:  MOVF   3B,W
+05AB:  MOVWF  43
+05AC:  CALL   31F
+05AD:  BTFSS  03.0
+05AE:  GOTO   5B2
+....................                   duty = duty + 1;
+05AF:  MOVLW  01
+05B0:  ADDWF  38,F
+....................                }
+05B1:  GOTO   5B4
+....................                else{
+....................                   duty = duty - 1;
+05B2:  MOVLW  01
+05B3:  SUBWF  38,F
+....................                }
 ....................             }
-0588:  GOTO   58B
+05B4:  GOTO   5B7
 ....................             else{
-....................                duty = duty - 1;
-0589:  MOVLW  01
-058A:  SUBWF  38,F
+....................                duty = duty + 1;
+05B5:  MOVLW  01
+05B6:  ADDWF  38,F
 ....................             }
-....................          }
-058B:  GOTO   58E
-....................          else{
-....................             duty = duty + 1;
-058C:  MOVLW  01
-058D:  ADDWF  38,F
-....................          }
+....................           }
+05B7:  GOTO   5E6
+....................           else{
+....................             if(V1 - V2 > 0){
+05B8:  BSF    03.1
+05B9:  MOVF   23,W
+05BA:  MOVWF  3E
+05BB:  MOVF   22,W
+05BC:  MOVWF  3D
+05BD:  MOVF   21,W
+05BE:  MOVWF  3C
+05BF:  MOVF   20,W
+05C0:  MOVWF  3B
+05C1:  MOVF   2B,W
+05C2:  MOVWF  42
+05C3:  MOVF   2A,W
+05C4:  MOVWF  41
+05C5:  MOVF   29,W
+05C6:  MOVWF  40
+05C7:  MOVF   28,W
+05C8:  MOVWF  3F
+05C9:  CALL   1DE
+05CA:  MOVF   7A,W
+05CB:  MOVWF  3E
+05CC:  MOVF   79,W
+05CD:  MOVWF  3D
+05CE:  MOVF   78,W
+05CF:  MOVWF  3C
+05D0:  MOVF   77,W
+05D1:  MOVWF  3B
+05D2:  CLRF   42
+05D3:  CLRF   41
+05D4:  CLRF   40
+05D5:  CLRF   3F
+05D6:  MOVF   3E,W
+05D7:  MOVWF  46
+05D8:  MOVF   3D,W
+05D9:  MOVWF  45
+05DA:  MOVF   3C,W
+05DB:  MOVWF  44
+05DC:  MOVF   3B,W
+05DD:  MOVWF  43
+05DE:  CALL   31F
+05DF:  BTFSS  03.0
+05E0:  GOTO   5E4
+....................                duty = duty + 1;
+05E1:  MOVLW  01
+05E2:  ADDWF  38,F
+....................             }
+05E3:  GOTO   5E6
+....................             else{
+....................                   duty = duty - 1;
+05E4:  MOVLW  01
+05E5:  SUBWF  38,F
+....................             }
+....................           }  
 ....................        }
-058E:  GOTO   5BD
-....................        else{
-....................          if(V1 - V2 > 0){
-058F:  BSF    03.1
-0590:  MOVF   23,W
-0591:  MOVWF  3E
-0592:  MOVF   22,W
-0593:  MOVWF  3D
-0594:  MOVF   21,W
-0595:  MOVWF  3C
-0596:  MOVF   20,W
-0597:  MOVWF  3B
-0598:  MOVF   2B,W
-0599:  MOVWF  42
-059A:  MOVF   2A,W
-059B:  MOVWF  41
-059C:  MOVF   29,W
-059D:  MOVWF  40
-059E:  MOVF   28,W
-059F:  MOVWF  3F
-05A0:  CALL   1DE
-05A1:  MOVF   7A,W
-05A2:  MOVWF  3E
-05A3:  MOVF   79,W
-05A4:  MOVWF  3D
-05A5:  MOVF   78,W
-05A6:  MOVWF  3C
-05A7:  MOVF   77,W
-05A8:  MOVWF  3B
-05A9:  CLRF   42
-05AA:  CLRF   41
-05AB:  CLRF   40
-05AC:  CLRF   3F
-05AD:  MOVF   3E,W
-05AE:  MOVWF  46
-05AF:  MOVF   3D,W
-05B0:  MOVWF  45
-05B1:  MOVF   3C,W
-05B2:  MOVWF  44
-05B3:  MOVF   3B,W
-05B4:  MOVWF  43
-05B5:  CALL   31F
-05B6:  BTFSS  03.0
-05B7:  GOTO   5BB
-....................             duty = duty + 1;
-05B8:  MOVLW  01
-05B9:  ADDWF  38,F
-....................          }
-05BA:  GOTO   5BD
-....................          else{
-....................                duty = duty - 1;
-05BB:  MOVLW  01
-05BC:  SUBWF  38,F
-....................          }
-....................        }  
-....................        
 ....................        V2 = V1;
-05BD:  MOVF   23,W
-05BE:  MOVWF  2B
-05BF:  MOVF   22,W
-05C0:  MOVWF  2A
-05C1:  MOVF   21,W
-05C2:  MOVWF  29
-05C3:  MOVF   20,W
-05C4:  MOVWF  28
+05E6:  MOVF   23,W
+05E7:  MOVWF  2B
+05E8:  MOVF   22,W
+05E9:  MOVWF  2A
+05EA:  MOVF   21,W
+05EB:  MOVWF  29
+05EC:  MOVF   20,W
+05ED:  MOVWF  28
 ....................        I2 = I1;
-05C5:  MOVF   27,W
-05C6:  MOVWF  2F
-05C7:  MOVF   26,W
-05C8:  MOVWF  2E
-05C9:  MOVF   25,W
-05CA:  MOVWF  2D
-05CB:  MOVF   24,W
-05CC:  MOVWF  2C
+05EE:  MOVF   27,W
+05EF:  MOVWF  2F
+05F0:  MOVF   26,W
+05F1:  MOVWF  2E
+05F2:  MOVF   25,W
+05F3:  MOVWF  2D
+05F4:  MOVF   24,W
+05F5:  MOVWF  2C
 ....................        
 ....................        lcd_gotoxy(1,1);                  //Ubiquese en la posicion 1,1
-05CD:  MOVLW  01
-05CE:  MOVWF  42
-05CF:  MOVWF  43
-05D0:  CALL   0B8
+05F6:  MOVLW  01
+05F7:  MOVWF  42
+05F8:  MOVWF  43
+05F9:  CALL   0B8
 ....................        lcd_putc("El Duty Cycle es:");
-05D1:  MOVLW  05
-05D2:  BSF    03.6
-05D3:  MOVWF  0D
-05D4:  MOVLW  00
-05D5:  MOVWF  0F
-05D6:  BCF    03.6
-05D7:  CALL   0F6
+05FA:  MOVLW  05
+05FB:  BSF    03.6
+05FC:  MOVWF  0D
+05FD:  MOVLW  00
+05FE:  MOVWF  0F
+05FF:  BCF    03.6
+0600:  CALL   0F6
 ....................        lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
-05D8:  MOVLW  02
-05D9:  MOVWF  42
-05DA:  MOVWF  43
-05DB:  CALL   0B8
+0601:  MOVLW  02
+0602:  MOVWF  42
+0603:  MOVWF  43
+0604:  CALL   0B8
 ....................        printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
-05DC:  MOVLW  0E
-05DD:  BSF    03.6
-05DE:  MOVWF  0D
-05DF:  MOVLW  00
-05E0:  MOVWF  0F
-05E1:  BCF    03.0
-05E2:  MOVLW  04
-05E3:  BCF    03.6
-05E4:  MOVWF  3B
-05E5:  GOTO   35E
-05E6:  MOVF   38,W
-05E7:  MOVWF  3B
-05E8:  MOVLW  18
-05E9:  MOVWF  3C
-05EA:  GOTO   3CC
-....................        delay_ms(1000);
-05EB:  MOVLW  04
-05EC:  MOVWF  3B
-05ED:  MOVLW  FA
-05EE:  MOVWF  42
-05EF:  CALL   013
-05F0:  DECFSZ 3B,F
-05F1:  GOTO   5ED
+0605:  MOVLW  0E
+0606:  BSF    03.6
+0607:  MOVWF  0D
+0608:  MOVLW  00
+0609:  MOVWF  0F
+060A:  BCF    03.0
+060B:  MOVLW  04
+060C:  BCF    03.6
+060D:  MOVWF  3B
+060E:  GOTO   35E
+060F:  MOVF   38,W
+0610:  MOVWF  3B
+0611:  MOVLW  18
+0612:  MOVWF  3C
+0613:  GOTO   3CC
+....................        delay_ms(500);
+0614:  MOVLW  02
+0615:  MOVWF  3B
+0616:  MOVLW  FA
+0617:  MOVWF  42
+0618:  CALL   013
+0619:  DECFSZ 3B,F
+061A:  GOTO   616
 ....................        lcd_putc("\f");                   // Borramos LCD
-05F2:  MOVLW  12
-05F3:  BSF    03.6
-05F4:  MOVWF  0D
-05F5:  MOVLW  00
-05F6:  MOVWF  0F
-05F7:  BCF    03.6
-05F8:  CALL   0F6
-05F9:  GOTO   465
+061B:  MOVLW  12
+061C:  BSF    03.6
+061D:  MOVWF  0D
+061E:  MOVLW  00
+061F:  MOVWF  0F
+0620:  BCF    03.6
+0621:  CALL   0F6
+0622:  GOTO   465
 ....................    }
 .................... }
-05FA:  SLEEP
+0623:  SLEEP
 
 Configuration Fuses:
    Word  1: 2CF1   XT NOWDT NOPUT MCLR NOPROTECT NOCPD NOBROWNOUT IESO FCMEN NOLVP NODEBUG

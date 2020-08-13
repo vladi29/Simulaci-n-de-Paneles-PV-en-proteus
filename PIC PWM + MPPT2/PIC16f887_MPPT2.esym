@@ -1,9 +1,10 @@
-D G "__PCM__" 0 91 ""5.095d""
-D G "__DEVICE__" 0 91 "887"
-D G "__DATE__" 0 91 ""13-Aug-20""
-D G "__TIME__" 0 91 ""15:32:51""
-D G "_UNICODE" 0 91 ""?""
-D G "__EVAL" 0 91 ""?"" "Vladimir Alfaro - Universidad Sim?n Bol?var - 09/08/2020"
+F N "main" 0 19 ""
+D G "__PCM__" 0 89 ""5.095d""
+D G "__DEVICE__" 0 89 "887"
+D G "__DATE__" 0 89 ""13-Aug-20""
+D G "__TIME__" 0 89 ""17:30:07""
+D G "_UNICODE" 0 89 ""?""
+D G "__EVAL" 0 89 ""?"" "Vladimir Alfaro - Universidad Sim?n Bol?var - 09/08/2020"
 c L "set_tris_a" 1 1 6 "FUNCTION"
 f N "set_tris_a" 1 39 ""
 v L "value" 1 39 "int8" `55 
@@ -1219,7 +1220,7 @@ V G "I2" 0 17 "float" `684
 V G "P1" 0 17 "float" `685 
 V G "P2" 0 17 "float" `686 
 F N "main" 0 19 ""
-F G "main" 0 19 "void()" `687  "Para la PWM de 10Khz es necesario un Timer2=9, cuando la frecuencia del cristal es de 4Mhz,"
+F G "main" 0 19 "void()" `687  "Para la PWM de 25Khz es necesario un Timer2=9, cuando la frecuencia del cristal es de 4Mhz,"
 C L "main" 0 9 2 "FUNCTION"
 C L "main" 0 9 1 "FUNCTION"
 C L "main" 0 9 2 "FUNCTION"

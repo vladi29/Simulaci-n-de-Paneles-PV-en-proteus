@@ -118,13 +118,13 @@ Project Directory:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\
 
 Project Files:
-    PICMPPT2.c                                              [12-Aug-20 22:32  CRC=68BD4CBD]
+    PICMPPT2.c                                              [13-Aug-20 17:54  CRC=559BF4CB]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-Feb-16 10:05  CRC=D1A6378A]
 
-Source signature=BA9066C2
+Source signature=A76F0ED0
 Program memory checksum=0000
-Hex file CRC=9868
+Hex file CRC=E940
 
 Units:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\PICMPPT2 (main)

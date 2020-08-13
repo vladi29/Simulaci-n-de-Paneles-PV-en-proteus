@@ -1,0 +1,5 @@
+Compiling C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\PICMPPT2 on 13-Aug-20 at 17:54
+>>> Warning 203 "C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\PICMPPT2.c" Line 22(1,1): Condition always TRUE
+      Memory usage:   ROM=19%      RAM=10% - 13%
+      0 Errors,  1 Warnings.
+Build Successful.

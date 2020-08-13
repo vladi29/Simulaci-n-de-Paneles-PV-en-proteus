@@ -13,10 +13,10 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   89    39 100  PIC16f887_MPPT2.c
+   88    39 100  PIC16f887_MPPT2.c
   798     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
 ----- -----
-  887    39 Total
+  886    39 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------

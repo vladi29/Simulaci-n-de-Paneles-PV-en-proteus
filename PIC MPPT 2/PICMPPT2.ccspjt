@@ -11,7 +11,7 @@ Type=4
 1=PICMPPT2.c
 
 [defines]
-buildcount=2
+buildcount=4
 
 [ProjectLog]
 Days=2
@@ -19,7 +19,7 @@ D1=12-08-2020
 D1_L=5
 D1_L1=[80818]Started Editing.
 D1_L2=[81469]Stopped Editing.
-TotalEdit=15
+TotalEdit=21
 TotalDebug=0
 D1_E=6
 D1_D=0
@@ -27,19 +27,23 @@ D1_L3=[81517]Project Closed.
 D1_L4=[86078]Project Opened.
 D1_L5=[86137]Started Editing.
 D2=13-08-2020
-D2_L=2
+D2_L=6
 D2_L1=[218]Stopped Editing.
-D2_E=9
+D2_E=15
 D2_D=0
 D2_L2=[218]Project Closed.
+D2_L3=[63655]Project Opened.
+D2_L4=[64337]Started Editing.
+D2_L5=[64685]Stopped Editing.
+D2_L6=[64685]Project Closed.
 
 [Opened Files]
-1=..\PIC PWM\PIC_PWM.c
-t1=9
+1=PICMPPT2.c
+t1=26
 Count=1
-[Units]
-Count=1
-1=PICMPPT2 (main)
 
 [fileformats]
 forcecoff=0
+[Units]
+Count=1
+1=PICMPPT2 (main)

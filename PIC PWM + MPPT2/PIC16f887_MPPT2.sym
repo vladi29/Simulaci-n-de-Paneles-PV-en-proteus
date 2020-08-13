@@ -66,10 +66,10 @@ Project Directory:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM + MPPT2\
 
 Project Files:
-    PIC16f887_MPPT2.c                                       [13-Aug-20 15:32  CRC=EFDD410F]
+    PIC16f887_MPPT2.c                                       [13-Aug-20 17:30  CRC=99CB7DD9]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
 
-Source signature=4CEA96F1
+Source signature=F6D8D3BB
 Program memory checksum=0000
 Hex file CRC=D4C4
 

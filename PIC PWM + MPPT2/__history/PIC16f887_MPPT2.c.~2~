@@ -82,6 +82,7 @@ void main(){
             duty = duty - 1;
          }
        }  
+       
        V2 = V1;
        I2 = I1;
     }

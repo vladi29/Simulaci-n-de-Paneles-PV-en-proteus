@@ -1,4 +1,4 @@
-CCS PCM C Compiler, Version 5.095d, 1               13-Aug-20 15:30
+CCS PCM C Compiler, Version 5.095d, 1               13-Aug-20 15:32
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
@@ -1114,7 +1114,6 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 03EC:  SUBWF  21,F
 ....................          }
 ....................        }  
-....................        
 ....................        V2 = V1;
 03ED:  MOVF   27,W
 03EE:  MOVWF  2B

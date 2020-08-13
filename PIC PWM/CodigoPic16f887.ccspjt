@@ -11,11 +11,11 @@ Type=4
 1=CodigoPic16f887.c
 
 [defines]
-buildcount=36
+buildcount=42
 
 [Opened Files]
 1=CodigoPic16f887.c
-t1=61
+t1=66
 Count=1
 2=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
 t2=92
@@ -25,7 +25,7 @@ Days=3
 D1=10-08-2020
 D1_L=32
 D1_L1=[44696]Stopped Editing.
-TotalEdit=112
+TotalEdit=184
 TotalDebug=0
 D1_E=60
 D1_D=0
@@ -81,7 +81,7 @@ D2_L14=[86076]Project Closed.
 D2_L15=[86135]Project Opened.
 D2_L16=[86153]Project Closed.
 D3=12-08-2020
-D3_L=12
+D3_L=24
 D3_L1=[62205]Project Opened.
 D3_L2=[62477]Started Editing.
 D3_L3=[62778]Stopped Editing.
@@ -94,6 +94,20 @@ D3_L9=[67429]Stopped Editing.
 D3_L10=[68465]Started Editing.
 D3_L11=[69778]Stopped Editing.
 D3_L12=[70089]Started Editing.
+D3_L13=[71133]Stopped Editing.
+D3_L14=[71333]Started Editing.
+D3_L15=[71446]Stopped Editing.
+D3_E=72
+D3_D=0
+D3_L16=[71446]Project Closed.
+D3_L17=[71634]Project Opened.
+D3_L18=[71687]Started Editing.
+D3_L19=[72156]Stopped Editing.
+D3_L20=[72395]Started Editing.
+D3_L21=[73062]Stopped Editing.
+D3_L22=[73689]Started Editing.
+D3_L23=[74211]Stopped Editing.
+D3_L24=[74211]Project Closed.
 
 [fileformats]
 forcecoff=0

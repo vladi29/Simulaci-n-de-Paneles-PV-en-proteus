@@ -1,5 +1,5 @@
 ÀÄAdquisicionADCPic16f887
-   ÀÄMAIN  0/266  Ram=1
+   ÀÄMAIN  0/445  Ram=4
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@cinit2  (Inline)  Ram=0
       ÃÄlcd_init  0/62  Ram=6
@@ -32,45 +32,39 @@
       ³     ÀÄ*
       ÃÄ@ITOF  0/29  Ram=2
       ÃÄ@MULFF  0/117  Ram=13
+      ÃÄ@ITOF  0/29  Ram=2
+      ÃÄ@MULFF  0/117  Ram=13
+      ÃÄ@MULFF  0/117  Ram=13
+      ÃÄ@MULFF  0/117  Ram=13
+      ÃÄ@FLT  0/63  Ram=10
+      ÃÄ@ADDFF  0/321  Ram=16
+      ÃÄ@FLT  0/63  Ram=10
+      ÃÄ@ADDFF  0/321  Ram=16
+      ÃÄ@FLT  0/63  Ram=10
+      ÃÄ@ADDFF  0/321  Ram=16
+      ÃÄ@FLT  0/63  Ram=10
       ÃÄlcd_gotoxy  0/18  Ram=4
       ³  ÀÄ*
       ÃÄ@PSTRINGC7_703  0/86  Ram=4
       ³  ÀÄ*
       ÃÄlcd_gotoxy  0/18  Ram=4
       ³  ÀÄ*
-      ÃÄ@PSTRINGCN7_703  0/87  Ram=5
+      ÃÄ@PSTRINGCN7_703  0/89  Ram=5
       ³  ÃÄlcd_putc  0/44  Ram=1
       ³  ³  ÀÄ*
       ³  ÀÄlcd_putc  0/44  Ram=1
       ³     ÀÄ*
-      ÃÄ@PRINTF_L32D_703FPFPF  0/224  Ram=13
-      ³  ÃÄ@MULFF  0/117  Ram=13
-      ³  ÃÄ@FTOSD  (Inline)  Ram=5
-      ³  ÃÄ@DIV3232  0/79  Ram=13
+      ÃÄ@PRINTF_D_703  0/89  Ram=6
+      ³  ÃÄ@DIV88  0/21  Ram=3
+      ³  ÃÄ@DIV88  0/21  Ram=3
       ³  ÃÄlcd_putc  0/44  Ram=1
       ³  ³  ÀÄ*
       ³  ÃÄlcd_putc  0/44  Ram=1
       ³  ³  ÀÄ*
       ³  ÃÄlcd_putc  0/44  Ram=1
       ³  ³  ÀÄ*
-      ³  ÃÄlcd_putc  0/44  Ram=1
-      ³  ³  ÀÄ*
-      ³  ÀÄ@DIV3232  0/79  Ram=13
-      ÃÄ@delay_ms1  0/21  Ram=1
-      ÃÄ@PSTRINGC7_703  0/86  Ram=4
-      ³  ÀÄ*
-      ÃÄ@ITOF  0/29  Ram=2
-      ÃÄ@MULFF  0/117  Ram=13
-      ÃÄlcd_gotoxy  0/18  Ram=4
-      ³  ÀÄ*
-      ÃÄ@PSTRINGC7_703  0/86  Ram=4
-      ³  ÀÄ*
-      ÃÄlcd_gotoxy  0/18  Ram=4
-      ³  ÀÄ*
-      ÃÄ@PSTRINGCN7_703  0/87  Ram=5
-      ³  ÀÄ*
-      ÃÄ@PRINTF_L32D_703FPFPF  0/224  Ram=13
-      ³  ÀÄ*
+      ³  ÀÄlcd_putc  0/44  Ram=1
+      ³     ÀÄ*
       ÃÄ@delay_ms1  0/21  Ram=1
       ÀÄ@PSTRINGC7_703  0/86  Ram=4
          ÀÄ*

@@ -1,9 +1,9 @@
 
-ROM used:   1546/8192 (19%)
-            1546/8192 (19%) including unused fragments
+ROM used:   1543/8192 (19%)
+            1543/8192 (19%) including unused fragments
 
             1.2 Average locations per line
-            11.9 Average locations per statement
+            11.6 Average locations per statement
 
 RAM used:   39/368 (11%) at main() level
             51/368 (14%) worst case
@@ -13,15 +13,15 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   84    46  35  CodigoPic16f887.c
+   86    49  37  CodigoPic16f887.c
   798     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
-  456    84  65  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
+  456    84  63  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
 ----- -----
- 1338   130 Total
+ 1340   133 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-0     21   1    1   1304  6.7  @delay_ms1
+0     21   1    1             @delay_ms1
  Inline         3    596  5.9  lcd_read_byte
 0      6   0    0     59  4.2  lcd_read_nibble
 0     12   1    1    179  3.3  lcd_send_nibble
@@ -29,7 +29,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0     62   4    6    814  7.2  lcd_init
 0     18   1    4    208  6.3  lcd_gotoxy
 0     44   3    1    354  4.7  lcd_putc
-0    485  31    4   1320  6.2  MAIN
+0    482  31    4   1417  6.2  MAIN
 0      1   0    0             @const730
 0     86   6    4             @PSTRINGC7_703
 0     29   2    2             @ITOF
@@ -45,21 +45,21 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               9
-    Statements              130
+    Functions               8
+    Statements              133
     Comments                272
-    Volume (V)              7850
-    Difficulty (D)          45.8
-    Effort to implement (E) 359840
-    Time to implement (T)   5 hours, 33 minutes
-    Est Delivered Bugs (B)  2
-    Cyclomatic Complexity   16
-    Maintainability (MI)    132
+    Volume (V)              5996
+    Difficulty (D)          39.2
+    Effort to implement (E) 235160
+    Time to implement (T)   3 hours, 38 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   12
+    Maintainability (MI)    110
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF  1542  502  
+00004-007FF  1539  505  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

@@ -20,12 +20,12 @@ void main(){
     //Para la PWM de 1Khz es necesario un Timer2=249, cuando la frecuencia del cristal es de 4Mhz,
     //el PostCaler=1 y Preescaler=4, en base a la siguiente fórmula:
     //Timer2 = (Td*fxtal/(4*Preescaler-PostCaler)) - 1
-    Timer2 = 49;                                     //Para este valor del Timer se puede alcanzar una f=5KHz
+    Timer2 = 249;                                    //Para este valor del Timer se puede alcanzar una f=25KHz
     PostCaler = 1;
-    duty = 100;// Sólo puede tomar valores de 1, 4 o 16, igual que el preescaler
+    duty = 500;// Sólo puede tomar valores de 1, 4 o 16, igual que el preescaler
     //Preescaler = 4;
     
-    setup_timer_2(t2_div_by_4, Timer2, PostCaler);    //Configuración del timer 2, preescaler=4, timer2=49, postcaler=1
+    setup_timer_2(t2_div_by_4, Timer2, PostCaler);    //Configuración del timer 2, preescaler=4, timer2=9, postcaler=1
     setup_ccp1(ccp_pwm);                              //Con esto estamos configurando el modo PWM en la salida ccp1 (pin RC2)
     setup_adc_ports(all_analog);                      //Todos los puertos analogicos quedaran como analogicos
     setup_adc(adc_clock_internal);                    //Configuramos la velocidad del ADC
@@ -36,7 +36,7 @@ void main(){
     
     while(1){
     
-       set_pwm1_duty(100);         //Se confiugura el dutycycle de la PWM 
+       set_pwm1_duty(500);         //Se confiugura el dutycycle de la PWM 
        
        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
        delay_us(50);                //Retardo de 50 us para leer la data
@@ -79,7 +79,7 @@ void main(){
        lcd_putc("El Duty Cycle es:");
        lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
        printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
-       delay_us(100);
+       delay_ms(500);
        lcd_putc("\f");                   // Borramos LCD
     }
 }

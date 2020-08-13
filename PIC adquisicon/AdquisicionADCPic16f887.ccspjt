@@ -11,10 +11,10 @@ Type=4
 1=AdquisicionADCPic16f887.c
 
 [defines]
-buildcount=10
+buildcount=12
 
 [ProjectLog]
-Days=1
+Days=2
 D1=11-08-2020
 D1_L=19
 D1_L1=[69777]Started Editing.
@@ -40,16 +40,26 @@ D1_D=0
 D1_L17=[82152]Project Closed.
 D1_L18=[86100]Project Opened.
 D1_L19=[86112]Project Closed.
+D2=12-08-2020
+D2_L=8
+D2_L1=[71505]Project Opened.
+D2_L2=[71539]Project Closed.
+D2_L3=[74221]Project Opened.
+D2_L4=[74226]Started Editing.
+D2_L5=[74987]Stopped Editing.
+D2_L6=[75962]Started Editing.
+D2_L7=[76262]Stopped Editing.
+D2_L8=[80576]Started Editing.
 
 [Opened Files]
 1=AdquisicionADCPic16f887.c
-t1=32
+t1=49
 2=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
 t2=465
-Count=2
-[Units]
 Count=1
-1=AdquisicionADCPic16f887 (main)
 
 [fileformats]
 forcecoff=0
+[Units]
+Count=1
+1=AdquisicionADCPic16f887 (main)

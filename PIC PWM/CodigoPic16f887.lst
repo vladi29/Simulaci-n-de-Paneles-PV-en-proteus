@@ -1,10 +1,10 @@
-CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 19:42
+CCS PCM C Compiler, Version 5.095d, 1               12-Aug-20 20:34
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
                Filename:   C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM\CodigoPic16f887.lst
 
-               ROM used:   1546 words (19%)
+               ROM used:   1543 words (19%)
                            Largest free fragment is 2048
                RAM used:   39 (11%) at main() level
                            51 (14%) worst case
@@ -1561,7 +1561,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 .................... #byte PORTA = 5
 .................... #byte PORTD = 8
 .................... 
-.................... int Timer2=49, PostCaler=1, duty = 100; // Preescaler;
+.................... int Timer2, PostCaler, duty; // Preescaler;
 .................... //Para 5KHz, el valor para modular el DutyCycle será 200 = 100%
 .................... //Por lo tanto duty = 100 implica un DutyCycle de 50%
 .................... float V1, V2=0, I1, I2=0, P1, P2;
@@ -1576,107 +1576,109 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 042A:  MOVWF  0F
 042B:  CLRF   10
 042C:  MOVF   0F,W
-042D:  MOVLW  31
-042E:  BCF    03.5
-042F:  MOVWF  20
-0430:  MOVLW  01
-0431:  MOVWF  21
-0432:  MOVLW  64
-0433:  MOVWF  22
-0434:  CLRF   2A
-0435:  CLRF   29
-0436:  CLRF   28
-0437:  CLRF   27
-0438:  CLRF   32
-0439:  CLRF   31
-043A:  CLRF   30
-043B:  CLRF   2F
-043C:  MOVLW  FF
-043D:  MOVWF  3B
-043E:  CLRF   3D
-043F:  CLRF   3C
-0440:  BSF    03.5
-0441:  BSF    03.6
-0442:  MOVF   09,W
-0443:  ANDLW  C0
-0444:  MOVWF  09
-0445:  BCF    03.6
-0446:  BCF    1F.4
-0447:  BCF    1F.5
-0448:  MOVLW  00
-0449:  BSF    03.6
-044A:  MOVWF  08
-044B:  BCF    03.5
-044C:  CLRF   07
-044D:  CLRF   08
-044E:  CLRF   09
-044F:  BCF    03.7
+042D:  BCF    03.5
+042E:  CLRF   2A
+042F:  CLRF   29
+0430:  CLRF   28
+0431:  CLRF   27
+0432:  CLRF   32
+0433:  CLRF   31
+0434:  CLRF   30
+0435:  CLRF   2F
+0436:  MOVLW  FF
+0437:  MOVWF  3B
+0438:  CLRF   3D
+0439:  CLRF   3C
+043A:  BSF    03.5
+043B:  BSF    03.6
+043C:  MOVF   09,W
+043D:  ANDLW  C0
+043E:  MOVWF  09
+043F:  BCF    03.6
+0440:  BCF    1F.4
+0441:  BCF    1F.5
+0442:  MOVLW  00
+0443:  BSF    03.6
+0444:  MOVWF  08
+0445:  BCF    03.5
+0446:  CLRF   07
+0447:  CLRF   08
+0448:  CLRF   09
+0449:  BCF    03.7
 ....................     
 ....................     //Para la PWM de 1Khz es necesario un Timer2=249, cuando la frecuencia del cristal es de 4Mhz,
 ....................     //el PostCaler=1 y Preescaler=4, en base a la siguiente fórmula:
-....................     // Timer2 = (Td*fxtal/(4*Preescaler-PostCaler)) - 1
-....................     //Timer2 = 10;                                    //Para este valor del Timer se puede alcanzar una f=25KHz
-....................     //PostCaler = 1;                                  // Sólo puede tomar valores de 1, 4 o 16, igual que el preescaler
+....................     //Timer2 = (Td*fxtal/(4*Preescaler-PostCaler)) - 1
+....................     Timer2 = 49;                                     //Para este valor del Timer se puede alcanzar una f=5KHz
+044A:  MOVLW  31
+044B:  BCF    03.6
+044C:  MOVWF  20
+....................     PostCaler = 1;
+044D:  MOVLW  01
+044E:  MOVWF  21
+....................     duty = 100;// Sólo puede tomar valores de 1, 4 o 16, igual que el preescaler
+044F:  MOVLW  64
+0450:  MOVWF  22
 ....................     //Preescaler = 4;
-....................     set_tris_a(0b00000011);                           //Configuro los pines RA0 y RA1 como entradas
-0450:  MOVLW  03
-0451:  BSF    03.5
-0452:  BCF    03.6
-0453:  MOVWF  05
-....................     setup_timer_2(t2_div_by_4, Timer2, PostCaler);    //Configuración del timer 2, preescaler=4, timer2=9, postcaler=1
-0454:  MOVLW  01
-0455:  BCF    03.5
-0456:  SUBWF  21,W
-0457:  MOVWF  78
-0458:  RLF    78,W
-0459:  MOVWF  77
-045A:  RLF    77,F
-045B:  RLF    77,F
-045C:  MOVLW  F8
-045D:  ANDWF  77,F
-045E:  MOVF   77,W
-045F:  IORLW  05
-0460:  MOVWF  12
-0461:  MOVF   20,W
-0462:  BSF    03.5
-0463:  MOVWF  12
+....................     
+....................     setup_timer_2(t2_div_by_4, Timer2, PostCaler);    //Configuración del timer 2, preescaler=4, timer2=49, postcaler=1
+0451:  MOVLW  01
+0452:  SUBWF  21,W
+0453:  MOVWF  78
+0454:  RLF    78,W
+0455:  MOVWF  77
+0456:  RLF    77,F
+0457:  RLF    77,F
+0458:  MOVLW  F8
+0459:  ANDWF  77,F
+045A:  MOVF   77,W
+045B:  IORLW  05
+045C:  MOVWF  12
+045D:  MOVF   20,W
+045E:  BSF    03.5
+045F:  MOVWF  12
 ....................     setup_ccp1(ccp_pwm);                              //Con esto estamos configurando el modo PWM en la salida ccp1 (pin RC2)
-0464:  BCF    03.5
-0465:  BCF    3B.2
-0466:  MOVF   3B,W
-0467:  BSF    03.5
-0468:  MOVWF  07
-0469:  BCF    03.5
-046A:  BCF    07.2
-046B:  MOVLW  0C
-046C:  MOVWF  17
-046D:  BSF    03.5
-046E:  CLRF   1B
-046F:  CLRF   1C
-0470:  MOVLW  01
-0471:  MOVWF  1D
+0460:  BCF    03.5
+0461:  BCF    3B.2
+0462:  MOVF   3B,W
+0463:  BSF    03.5
+0464:  MOVWF  07
+0465:  BCF    03.5
+0466:  BCF    07.2
+0467:  MOVLW  0C
+0468:  MOVWF  17
+0469:  BSF    03.5
+046A:  CLRF   1B
+046B:  CLRF   1C
+046C:  MOVLW  01
+046D:  MOVWF  1D
 ....................     setup_adc_ports(all_analog);                      //Todos los puertos analogicos quedaran como analogicos
-0472:  BSF    03.6
-0473:  MOVF   09,W
-0474:  ANDLW  C0
-0475:  IORLW  1F
-0476:  MOVWF  09
-0477:  BCF    03.6
-0478:  BCF    1F.4
-0479:  BCF    1F.5
-047A:  MOVLW  FF
-047B:  BSF    03.6
-047C:  MOVWF  08
+046E:  BSF    03.6
+046F:  MOVF   09,W
+0470:  ANDLW  C0
+0471:  IORLW  1F
+0472:  MOVWF  09
+0473:  BCF    03.6
+0474:  BCF    1F.4
+0475:  BCF    1F.5
+0476:  MOVLW  FF
+0477:  BSF    03.6
+0478:  MOVWF  08
 ....................     setup_adc(adc_clock_internal);                    //Configuramos la velocidad del ADC
-047D:  BCF    03.5
-047E:  BCF    03.6
-047F:  BSF    1F.6
-0480:  BSF    1F.7
-0481:  BSF    03.5
-0482:  BSF    1F.7
-0483:  BCF    03.5
-0484:  BSF    1F.0
+0479:  BCF    03.5
+047A:  BCF    03.6
+047B:  BSF    1F.6
+047C:  BSF    1F.7
+047D:  BSF    03.5
+047E:  BSF    1F.7
+047F:  BCF    03.5
+0480:  BSF    1F.0
+....................     set_tris_a(0b00000011);                           //Configuro los pines RA0 y RA1 como entradas
+0481:  MOVLW  03
+0482:  BSF    03.5
+0483:  MOVWF  05
 ....................     lcd_init();
+0484:  BCF    03.5
 0485:  GOTO   07A
 ....................     lcd_putc("\f");
 0486:  MOVLW  04
@@ -1690,7 +1692,7 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 ....................     
 ....................     while(1){
 ....................     
-....................        set_pwm1_duty(100);         //Se confiugura el dutycycle de la PWM
+....................        set_pwm1_duty(100);         //Se confiugura el dutycycle de la PWM 
 ....................        
 ....................        set_adc_channel(0);          //Selecciono el canal 0 (RA0)
 048D:  MOVLW  00
@@ -2098,26 +2100,23 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 05F7:  MOVLW  18
 05F8:  MOVWF  3F
 05F9:  GOTO   3CC
-....................        delay_ms(500);
-05FA:  MOVLW  02
-05FB:  MOVWF  3E
-05FC:  MOVLW  FA
-05FD:  MOVWF  45
-05FE:  CALL   013
-05FF:  DECFSZ 3E,F
-0600:  GOTO   5FC
+....................        delay_us(100);
+05FA:  MOVLW  21
+05FB:  MOVWF  77
+05FC:  DECFSZ 77,F
+05FD:  GOTO   5FC
 ....................        lcd_putc("\f");                   // Borramos LCD
-0601:  MOVLW  12
-0602:  BSF    03.6
-0603:  MOVWF  0D
-0604:  MOVLW  00
-0605:  MOVWF  0F
-0606:  BCF    03.6
-0607:  CALL   0F6
-0608:  GOTO   48D
+05FE:  MOVLW  12
+05FF:  BSF    03.6
+0600:  MOVWF  0D
+0601:  MOVLW  00
+0602:  MOVWF  0F
+0603:  BCF    03.6
+0604:  CALL   0F6
+0605:  GOTO   48D
 ....................     }
 .................... }
-0609:  SLEEP
+0606:  SLEEP
 
 Configuration Fuses:
    Word  1: 2FE4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG

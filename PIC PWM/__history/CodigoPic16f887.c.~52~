@@ -79,7 +79,7 @@ void main(){
        lcd_putc("El Duty Cycle es:");
        lcd_gotoxy(2,2);                  //Ubiquese en la posicion 2,2
        printf(lcd_putc,"D = %i",duty);   //Muestra el valor numerico de la conversionconversion
-       delay_us(100);
+       delay_ms(500);
        lcd_putc("\f");                   // Borramos LCD
     }
 }

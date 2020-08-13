@@ -1,5 +1,5 @@
 ÀÄCodigoPic16f887
-   ÀÄMAIN  0/485  Ram=4
+   ÀÄMAIN  0/482  Ram=4
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@cinit2  (Inline)  Ram=0
       ÃÄlcd_init  0/62  Ram=6
@@ -65,6 +65,5 @@
       ³  ³  ÀÄ*
       ³  ÀÄlcd_putc  0/44  Ram=1
       ³     ÀÄ*
-      ÃÄ@delay_ms1  0/21  Ram=1
       ÀÄ@PSTRINGC7_703  0/86  Ram=4
          ÀÄ*

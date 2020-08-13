@@ -8,8 +8,7 @@
 #BYTE PORTA= 5    //Se especifica la ubicacion en memoria del puerto A
 #BYTE PORTD= 8    //Se especifica la ubicacion en memoria del puerto D
  
-float V1, I1, V2=0, I2=0, P1, P2;        //Variable almacena los bits
-int duty = 50;
+long V1, I1, V2=0, I2=0, P1, P2, duty=50;        //Variable almacena los bits
  
 void main(){
    set_tris_a(0b00000011);          //Configuro los pines RA0 y RA1 como entrada

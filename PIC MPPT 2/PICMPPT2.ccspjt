@@ -9,9 +9,26 @@ FileList=PICMPPT2.c
 Type=4
 [mru-list]
 1=PICMPPT2.c
+
+[defines]
+buildcount=2
+
+[ProjectLog]
+Days=1
+D1=12-08-2020
+D1_L=3
+D1_L1=[80818]Started Editing.
+D1_L2=[81469]Stopped Editing.
+TotalEdit=6
+TotalDebug=0
+D1_E=6
+D1_D=0
+D1_L3=[81517]Project Closed.
+
+[Opened Files]
+1=PICMPPT2.c
+t1=52
+Count=1
 [Units]
 Count=1
 1=PICMPPT2 (main)
-
-[defines]
-buildcount=1

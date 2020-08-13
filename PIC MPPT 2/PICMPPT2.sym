@@ -18,16 +18,16 @@
 034-037 P2
 038     duty
 039-03A @sprintf_string
-03B     @PRINTF_D_703.P1
+03B-03E @ADDFF.P1
 03B-03E @MULFF.P2
 03B-03C @ITOF.P3
 03B     @PSTRINGCN7_703.P4
+03B     @PRINTF_D_703.P5
 03B     lcd_init.i
-03B-03E @ADDFF.P1
 03B     MAIN.@SCRATCH1
 03B     @PSTRINGC7_703.@SCRATCH1
-03C-03F lcd_init.LCD_INIT_STRING
 03C     @PRINTF_D_703.P1
+03C-03F lcd_init.LCD_INIT_STRING
 03C     MAIN.@SCRATCH2
 03C     @PSTRINGC7_703.@SCRATCH2
 03C     @PSTRINGCN7_703.@SCRATCH1
@@ -67,12 +67,12 @@
 046     @ADDFF.@SCRATCH4
 047     lcd_send_byte.n
 047     @MULFF.@SCRATCH5
-047     @FLT.@SCRATCH1
 047     @ADDFF.@SCRATCH5
+047     @FLT.@SCRATCH1
 048     lcd_read_byte.low
 048     lcd_send_byte.@SCRATCH1
-048     @FLT.@SCRATCH2
 048     @ADDFF.@SCRATCH6
+048     @FLT.@SCRATCH2
 049     lcd_send_nibble.n
 049     lcd_read_byte.high
 049     @ADDFF.@SCRATCH7
@@ -105,8 +105,8 @@ ROM Allocation:
 0000F6  @PSTRINGC7_703
 00014C  @ITOF
 000169  @MULFF
-0001DE  @FLT
-00021D  @ADDFF
+0001DE  @ADDFF
+00031F  @FLT
 00035E  @PSTRINGCN7_703
 0003B7  @DIV88
 0003CC  @PRINTF_D_703
@@ -118,13 +118,13 @@ Project Directory:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\
 
 Project Files:
-    PICMPPT2.c                                              [12-Aug-20 22:24  CRC=E77D6D92]
+    PICMPPT2.c                                              [12-Aug-20 22:32  CRC=68BD4CBD]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-Feb-16 10:05  CRC=D1A6378A]
 
-Source signature=39508797
+Source signature=BA9066C2
 Program memory checksum=0000
-Hex file CRC=31AB
+Hex file CRC=9868
 
 Units:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC MPPT 2\PICMPPT2 (main)

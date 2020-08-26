@@ -11,15 +11,17 @@ Type=4
 1=PIC16f887_MPPT2.c
 
 [defines]
-buildcount=6
+buildcount=13
 
 [Opened Files]
 1=PIC16f887_MPPT2.c
-t1=72
-Count=1
+t1=5
+Count=2
+2=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
+t2=1
 
 [ProjectLog]
-Days=1
+Days=2
 D1=13-08-2020
 D1_L=14
 D1_L1=[56149]Stopped Editing.
@@ -40,6 +42,11 @@ D1_L11=[72253]Project Opened.
 D1_L12=[72314]Started Editing.
 D1_L13=[72687]Stopped Editing.
 D1_L14=[72687]Project Closed.
+D2=25-08-2020
+D2_L=3
+D2_L1=[55564]Project Opened.
+D2_L2=[55780]Started Editing.
+D2_L3=[56816]Stopped Editing.
 
 [fileformats]
 forcecoff=0

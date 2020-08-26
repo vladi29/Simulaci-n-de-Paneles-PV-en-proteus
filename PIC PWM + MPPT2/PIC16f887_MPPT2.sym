@@ -17,15 +17,16 @@
 034-037 P1
 038-03B P2
 03C     @TRIS_C
-03D-03E @ITOF.P1
-03D-040 @MULFF.P2
+03D-040 @SFTOI.P1
+03D-03E @ITOF.P2
 03D-040 @ADDFF.P3
+03D-040 @MULFF.P4
 03D     main.@SCRATCH1
 03E     main.@SCRATCH2
 03F     main.@SCRATCH3
 040     main.@SCRATCH4
-041-044 @FLT.P1
-041-044 @MULFF.P2
+041-044 @MULFF.P1
+041-044 @FLT.P2
 041-044 @ADDFF.P3
 045-048 @FLT.P1
 045     @MULFF.@SCRATCH1
@@ -58,20 +59,21 @@ ROM Allocation:
 000021  @MULFF
 000096  @ADDFF
 0001D7  @FLT
-000216  main
-000216  @cinit1
-00023B  @cinit2
+000216  @SFTOI
+000235  main
+000235  @cinit1
+00025A  @cinit2
 
 Project Directory:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM + MPPT2\
 
 Project Files:
-    PIC16f887_MPPT2.c                                       [13-Aug-20 20:09  CRC=FF49C184]
+    PIC16f887_MPPT2.c                                       [25-Aug-20 15:41  CRC=32106085]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [10-Jul-20 08:55  CRC=AE86AAF1]
 
-Source signature=5C571766
+Source signature=8F1DB667
 Program memory checksum=0000
-Hex file CRC=2864
+Hex file CRC=A8E8
 
 Units:
     C:\Users\Usuario\OneDrive\Escritorio\USB\Verano 2020\Electiva de Electronica de Potencia\Proyecto 2\Simulaci-n-de-Paneles-PV-en-proteus\PIC PWM + MPPT2\PIC16f887_MPPT2 (main)

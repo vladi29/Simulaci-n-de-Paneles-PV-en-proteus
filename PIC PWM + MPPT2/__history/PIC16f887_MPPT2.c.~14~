@@ -10,7 +10,7 @@
 #byte PORTA = 5
 //#byte PORTD = 8
 
-int16 duty = 20;
+float32 duty = 20;
 int Timer2, PostCaler; // Preescaler;
 //Para 25KHz, el valor para modular el DutyCycle ser? 40 = 100%
 //Por lo tanto duty = 20 implica un DutyCycle de 50%
